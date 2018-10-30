@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql995.umbler.com:41890',
-	'username' => 'torra',
-	'password' => 'torratorra',
-	'database' => 'torra',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
