@@ -12,14 +12,14 @@ class Login extends CI_Controller {
     }
     public function autenticar() {
         $usuario = mb_convert_case($this->input->post('usuario'), MB_CASE_LOWER);
-        $senha = md5($this->input->post('senha'));
+        $senha = $this->input->post('senha');
         $this->db->where('user', $usuario);
         $this->db->where('senha', $senha);
         $usuario_logado = $this->db->get('usuario')->result();
         if (count($usuario_logado) == 1) {
             $this->db->where('user', $usuario);
             $usuario_logado1 = $this->db->get('user_logado')->result();
-            $dados['logado'] = $usuario_logado[1];
+            $dados['logado'] = $usuario_logado1[1];
             $dados['estou_logado'] = TRUE;
             $this->session->set_userdata($dados);
             redirect('Home');

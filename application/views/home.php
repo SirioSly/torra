@@ -10,14 +10,13 @@
     ?>
     <h2>Home</h2>
     <p></p>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'contato'; ?>">Contato</a>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'estoque'; ?>">estoque</a>
     <p></p>
-    <?php if($this->session->userdata('logado')->perfilAcesso == 'ADM'){?>
-          
-    <a class="btn btn-primary" href="<?php echo base_url() . 'funcao'; ?>">Função</a>
+    
+    <a class="btn btn-primary" href="<?php echo base_url() . 'usuario'; ?>">usuario</a>
     <p></p>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'usuario'; ?>">Usuário</a>
-    <?php }?>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'cliente'; ?>"></a>
+
     <p></p>
     
 
