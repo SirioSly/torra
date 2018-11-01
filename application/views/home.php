@@ -15,7 +15,7 @@
     
     <a class="btn btn-primary" href="<?php echo base_url() . 'usuario'; ?>">usuario</a>
     <p></p>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'cliente'; ?>"></a>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'cliente'; ?>">cliente</a>
 
     <p></p>
     
