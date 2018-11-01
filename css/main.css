@@ -168,11 +168,22 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #ffc300;
+/*  Código para Imagem de Fundo*/
+background-image: url("../images/fundo5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+/*    Fim do Codigo Pra Imagem de Fundo*/
+
+/*Código para linear*/
+/*      background: #ffc300;
   background: -webkit-linear-gradient(-135deg, #ffc300, #ff7700);
   background: -o-linear-gradient(-135deg, #ffc300, #ff7700);
   background: -moz-linear-gradient(-135deg, #ffc300, #ff7700);
   background: linear-gradient(-135deg, #ffc300, #ff7700);
+/*Fim Do Codigo para Linear*/
+
 }
 
 .wrap-login100 {
@@ -180,6 +191,7 @@ iframe {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
+      background-image: url("../images/fundo5.png");
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -349,7 +361,7 @@ iframe {
 }
 
 .login100-form-btn:hover {
-  background: #333333;
+  background: #d65c00;
 }
 
 

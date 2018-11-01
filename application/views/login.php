@@ -1,14 +1,13 @@
 <div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="wrap-login100">                           
                             <div class="login100-pic js-tilt" data-tilt>
 					<img src="images/imgteste.png" alt="IMG">
 				</div>
                             <?php echo form_open('login/autenticar'); ?> 
-					<span class="login100-form-title">
+					<span class="login100-form-title" style="color: #fff">
 						Login
 					</span>
-
 					<div class="wrap-input100 validate-input" data-validate = "O usuario é exigido">
 						<input name="usuario" type="text" class="input100"  id="nomeusuario" placeholder="Usuario">
 						<span class="focus-input100"></span>
