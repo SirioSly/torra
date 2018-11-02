@@ -1,55 +1,25 @@
-    <!DOCTYPE html>
-
-    <div class="container">
-
-        <div class="row"></div>
-
-        <div class="col-xs-1 col-sm-1 col-lg-3"></div>
-        <div class="col-xs-10 col-sm-10 col-lg-6">
-        <?php
-        // put your code here
-//        echo $acronico;
-        echo "<br>";
-    //        echo $completo;
-        echo "<p>";
-        ?>
-        <h2>Cliente</h2>
-        <?php echo form_open('cliente/inserir'); ?>
-        <div class="form-group">
-            <label for="nome">Nome</label>
-            <input name="nome" type="text" class="col-sm-3 col-form-label form-control"  id="nome">
-            
-        </div>
-
-        <div class="form-group">
-            <label for="email">e-mail</label>
-            <input class="col-sm-3 col-form-label form-control" id="email" name="email" type="email" required/>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Função</label>
-            <select class="form-control" aria-label="ngSelected demo" required="required"
-                    id="idfuncao"name="idfuncao" type="name" required/>
-          
      
-        <input class="btn btn-success" type="submit" value="Salvar"/>
-        <input class="btn btn-secondary" type="reset" value="Limpar"/>
+       <a class="btn btn-primary" href="<?php echo base_url() . 'clienteNovo'; ?>">Adicionar Cliente</a>
+
+<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a>
+        <p></p>
         <?php form_close(); ?>
         <p></p>
 
-        
-        
 
-        <table id="contatos" class="table table-striped">
-        <caption>Cliente</caption>
+
+        <div class="hide" id="div-lista">
+        <table id="usuario" class="table table-striped">
+    
 
 
         <thead>
             <tr>
-                <th class="table-dark">Nome</th>
-                <th class="table-dark">e-mail</th>
-                <th class="table-dark">Função</th>
-                <th class="table-dark">Função</th>
+                <th class="table-dark">Usuário</th>
+                <th class="table-dark">User</th>
+                <th class="table-dark">Perfil Acesso</th>
+                <th class="table-dark">Funções</th>
+                
             </tr>
 
         </thead>
@@ -59,18 +29,18 @@
             <?php else: ?>
                 <?php foreach ($cliente as $row): ?>
                     <tr>
-                        <td><?php echo $row->nome; ?></td>
-                        <td><?php echo $row->email; ?></td>
-                        <td><?php echo $row->nomeFuncao; ?></td>
+                        <td><?php echo $row->nomeUsuario; ?></td>
+                        <td><?php echo $row->user; ?></td>
+                        <td><?php echo $row->perfilAcesso; ?></td>
                         <td>
                             <a class="btn btn-success" href="<?php
                             echo base_url() .
-                            'cliente/editar/' . $row->id;
+                            'cliente/editar/' . $row->idcliente;
                             ?>">Editar</a>
                             |
                             <a class="btn btn-danger" href="<?php
                                echo base_url() . ''
-                               . 'cliente/excluir/' . $row->id;
+                               . 'cliente/excluir/' . $row->idcliente;
                                ?>">Excluir</a>
                         </td>
                     </tr>
@@ -78,26 +48,31 @@
     <?php endif; ?>
         </tbody>
     </table>
-
+        </div>
     <p></p>
     <a class="btn btn-primary" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
     </div>
         </div>
     
     <script type="text/javascript">
-        $(document).ready(function () {
-        $('#cliente').DataTable({
-            language: {
-                "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-            },
-             iDisplayLength: 10,   
-             dom: 'Bfrtip',
-    buttons: [
-        'copy',
-        'excel',
-        'print',
-        'pdf'
-    ]
+        $("#btn-lista").click(function (){
+            $("#div-lista").toggleClass("hide");
+            
         });
-    });
+        
+//        $(document).ready(function () {
+//        $('#funcao').DataTable({
+//            language: {
+//                "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+//            },
+//             iDisplayLength: 10,   
+//             dom: 'Bfrtip',
+//    buttons: [
+//        'copy',
+//        'excel',
+//        'print',
+//        'pdf'
+//    ]
+//        });
+//    });
 </script>
