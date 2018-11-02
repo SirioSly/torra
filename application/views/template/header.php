@@ -55,10 +55,10 @@ and open the template in the editor.
 
     </head>
     <body>
-        <?php if ($this->session->userdata('estou_logado')) { ?>
+        <?php // if ($this->session->userdata('estou_logado')) { ?>
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="<?php echo base_url() . 'home'; ?>">Sistema Tin N4 - Senac GRV</a>
+                    <a class="navbar-brand" href="<?php echo base_url() . 'home'; ?>">Lojão Torra Torra</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -73,12 +73,17 @@ and open the template in the editor.
                                     Cadastro
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?php echo base_url() . 'contato'; ?>">Contato</a>
-                                    <div class="dropdown-divider"></div>
-                                    <?php if ($this->session->userdata('logado')->perfilAcesso == "ADM") { ?>
-                                        <a class="dropdown-item" href="<?php echo base_url() . 'funcao'; ?>">Função</a>
-                                        <a class="dropdown-item" href="<?php echo base_url() . 'usuario'; ?>">Usuário</a>
-                                    <?php } ?>
+                                   
+                                   
+                                   
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'cliente'; ?>">Cliente</a>
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'fornecedor'; ?>">Fornecedor</a>
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'cidade'; ?>">Cidade</a>
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'estado'; ?>">Estado</a>
+                                         <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'estoque'; ?>">Estoque</a>
+                                        
+                             
                                 </div>
                             </li>
                         </ul>
@@ -93,5 +98,5 @@ and open the template in the editor.
             </div>
             <p></p>
             <?php
-        } 
+//        } 
 
