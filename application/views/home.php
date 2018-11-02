@@ -16,7 +16,10 @@
     <a class="btn btn-primary" href="<?php echo base_url() . 'usuario'; ?>">usuario</a>
     <p></p>
     <a class="btn btn-primary" href="<?php echo base_url() . 'cliente'; ?>">cliente</a>
-
+<p></p>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'estado'; ?>">Cadastro de estado</a>
+    <p></p>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'cidade'; ?>">Cadastro de cidade</a>
     <p></p>
     
 
