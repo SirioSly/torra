@@ -7,6 +7,8 @@ class ClienteNovo extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('ClienteNovo_model', 'cliente');
+        $this->load->model('Estado_model', 'estado');
+        $this->load->model('Cidade_model', 'cidade');
         
     }
     
@@ -16,6 +18,8 @@ class ClienteNovo extends CI_Controller {
         $dados['acronico'] = "T";
         $dados['completo'] = "Torra";
         $dados['clienteNovo'] = $this->cliente->listar();
+        $dados['estado'] = $this->estado->listar();
+        $dados['cidade'] = $this->cidade->listar();
         $this->load->view('clienteNovo', $dados);
         $this->load->view('template/footer');
     }
@@ -27,6 +31,7 @@ public function inserir() {
         $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
         $data['cnpj'] = mb_convert_case ($this->input->post('cnpj'), MB_CASE_UPPER);
         $data['cpf'] = mb_convert_case ($this->input->post('cpf'), MB_CASE_UPPER);
+        $data['idcidade'] = mb_convert_case ($this->input->post('idcidade'), MB_CASE_UPPER);
         $data['contato'] = mb_convert_case ($this->input->post('contato'), MB_CASE_UPPER);
         $data['ultimaCompra'] = mb_convert_case ($this->input->post('ultimaCompra'), MB_CASE_UPPER);
         $data['dataAniver'] = mb_convert_case ($this->input->post('dataAniver'), MB_CASE_UPPER);

@@ -38,13 +38,36 @@
         
         <div class="form-group">
             <label for="cnpj">CNPJ</label>
-            <input class="col-sm-6 form-control" id="cnpj" name="cnpj" type="text" required/>
+            <input class="col-sm-6 form-control" id="cnpj" name="cnpj" type="text" />
         </div>
         
         <div class="form-group">
             <label for="cpf">CPF</label>
-            <input class="col-sm-6 form-control" id="cpf" name="cpf" type="text" required/>
+            <input class="col-sm-6 form-control" id="cpf" name="cpf" type="text" />
         </div>
+        
+           <div class="form-group">
+        <label for="idestado">Estado</label>
+        <select class="form-control" aria-label="ngSelected demo" required="requered"
+                id="idestado" name="idestado" type="name" required/>
+        <option>Selecionar Estado... </option>
+        <?php foreach ($estado as $estado): ?>
+            <option value="<?php echo $estado->idestado; ?>"><?php echo $estado->nomeEstado; ?></option>
+        <?php endforeach; ?>        
+    </select>
+    </div>
+        
+           <div class="form-group">
+        <label for="idcidade">Cidade</label>
+        <select class="form-control" aria-label="ngSelected demo" required="requered"
+                id="idcidade" name="idcidade" type="name" required/>
+        <option>Selecionar Estado... </option>
+        <?php foreach ($cidade as $cidade): ?>
+            <option value="<?php echo $cidade->idcidade; ?>"><?php echo $cidade->nomeCidade; ?></option>
+        <?php endforeach; ?>        
+    </select>
+    </div>
+        
         
         <div class="form-group">
             <label for="contato">Contato</label>
@@ -56,10 +79,10 @@
             <input class="col-sm-6 form-control" id="dataAniver" name="dataAniver" type="text" required/>
         </div>
         
-        <div class="form-group">
+<!--        <div class="form-group">
             <label for="status">Status</label>
             <input class="col-sm-6 form-control" id="status" name="status" type="text" required/>
-        </div>
+        </div>-->
         
         
         <input class="btn btn-success" type="submit" value="Salvar"/>

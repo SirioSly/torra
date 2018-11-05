@@ -2,29 +2,41 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cliente extends CI_Controller {
+class ClienteNovo extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Cliente_model', 'cliente');
+        $this->load->model('ClienteNovo_model', 'cliente');
+        $this->load->model('Estado_model', 'estado');
+        $this->load->model('Cidade_model', 'cidade');
         
-        //contatos é um alias para o Contatos_model 
     }
+    
 
     public function index() {
         $this->load->view('template/header');
         $dados['acronico'] = "T";
         $dados['completo'] = "Torra";
-        $dados['cliente'] = $this->cliente->listar();
-        $this->load->view('cliente', $dados);
+        $dados['clienteNovo'] = $this->cliente->listar();
+        $dados['estado'] = $this->estado->listar();
+        $dados['cidade'] = $this->cidade->listar();
+        $this->load->view('clienteNovo', $dados);
         $this->load->view('template/footer');
     }
 
-    public function inserir() {
-        $data['nomeUsuario'] = mb_convert_case ($this->input->post('nomeUsuario'), MB_CASE_UPPER);
-        $data['user'] = mb_convert_case ($this->input->post('user'), MB_CASE_LOWER);
-        $data['senha'] = md5($this->input->post('senha'));
-        $data['perfilAcesso']= mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_UPPER);
+public function inserir() {
+        $data['nome'] = mb_convert_case ($this->input->post('nome'), MB_CASE_UPPER);
+        $data['endereco'] = mb_convert_case ($this->input->post('endereco'), MB_CASE_UPPER);
+        $data['fone'] = mb_convert_case ($this->input->post('fone'), MB_CASE_UPPER);
+        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
+        $data['cnpj'] = mb_convert_case ($this->input->post('cnpj'), MB_CASE_UPPER);
+        $data['cpf'] = mb_convert_case ($this->input->post('cpf'), MB_CASE_UPPER);
+        $data['idcidade'] = mb_convert_case ($this->input->post('idcidade'), MB_CASE_UPPER);
+        $data['contato'] = mb_convert_case ($this->input->post('contato'), MB_CASE_UPPER);
+        $data['ultimaCompra'] = mb_convert_case ($this->input->post('ultimaCompra'), MB_CASE_UPPER);
+        $data['dataAniver'] = mb_convert_case ($this->input->post('dataAniver'), MB_CASE_UPPER);
+        $data['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
+        
         
          $result = $this->cliente->inserir($data);
         if ($result == TRUE){
@@ -62,9 +74,16 @@ class Cliente extends CI_Controller {
    public function atualizar(){
         $data['idcliente'] = $this->input->post('idcliente');
         $data['nome'] = mb_convert_case ($this->input->post('nome'), MB_CASE_UPPER);
-        $data['user'] = mb_convert_case ($this->input->post('user'), MB_CASE_LOWER);
-        $data['senha'] = md5($this->input->post('senha'));
-        $data['perfilAcesso']= mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_UPPER);
+        $data['endereco'] = mb_convert_case ($this->input->post('endereco'), MB_CASE_UPPER);
+        $data['fone'] = mb_convert_case ($this->input->post('fone'), MB_CASE_UPPER);
+        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
+        $data['cnpj'] = mb_convert_case ($this->input->post('cnpj'), MB_CASE_UPPER);
+        $data['cpf'] = mb_convert_case ($this->input->post('cpf'), MB_CASE_UPPER);
+        $data['contato'] = mb_convert_case ($this->input->post('contato'), MB_CASE_UPPER);
+        $data['ultimaCompra'] = mb_convert_case ($this->input->post('ultimaCompra'), MB_CASE_UPPER);
+        $data['dataAniver'] = mb_convert_case ($this->input->post('dataAniver'), MB_CASE_UPPER);
+        $data['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
+       
         
         $result = $this->cliente->atualizar($data);
         if ($result == TRUE){

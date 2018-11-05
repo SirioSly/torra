@@ -21,10 +21,16 @@
             
         
             
-            <option>Selecionar estado...</option>
-            <?php foreach ($estado as $estado): ?>
+            <div class="form-group">
+        <label for="idestado">Estado</label>
+        <select class="form-control" aria-label="ngSelected demo" required="requered"
+                id="idestado" name="idestado" type="name" required/>
+        <option>Selecionar Estado... </option>
+        <?php foreach ($estado as $estado): ?>
             <option value="<?php echo $estado->idestado; ?>"><?php echo $estado->nomeEstado; ?></option>
-            <?php endforeach; ?>
+        <?php endforeach; ?>        
+    </select>
+    </div>
             
      
         <input class="btn btn-success" type="submit" value="Salvar"/>
@@ -36,36 +42,36 @@
         
 
         <table id="contatos" class="table table-striped">
-        <caption>Contatos</caption>
+        <caption>cidades</caption>
 
 
         <thead>
             <tr>
-                <th class="table-dark">Nome</th>
-                <th class="table-dark">e-mail</th>
+                <th class="table-dark">Nome cidade</th>
+                <th class="table-dark">UF do estado</th>
                 <th class="table-dark">Função</th>
-                <th class="table-dark">Função</th>
+                
             </tr>
 
         </thead>
         <tbody>
-            <?php if ($contatos == FALSE): ?>
-                <tr><td>Nenhum contato encontrado!</td></tr>
+            <?php if ($cidade == FALSE): ?>
+                <tr><td>Nenhum cidade encontrado!</td></tr>
             <?php else: ?>
-                <?php foreach ($contatos as $row): ?>
+                <?php foreach ($cidade as $row): ?>
                     <tr>
-                        <td><?php echo $row->nome; ?></td>
-                        <td><?php echo $row->email; ?></td>
-                        <td><?php echo $row->nomeFuncao; ?></td>
+                        <td><?php echo $row->nomeCidade; ?></td>
+                        <td><?php echo $row->nomeEstado; ?></td>
+                        
                         <td>
                             <a class="btn btn-success" href="<?php
                             echo base_url() .
-                            'cidade/editar/' . $row->idCidade;
+                            'cidade/editar/' . $row->idcidade;
                             ?>">Editar</a>
                             |
                             <a class="btn btn-danger" href="<?php
                                echo base_url() . ''
-                               . 'cidade/excluir/' . $row->idCidade;
+                               . 'cidade/excluir/' . $row->idcidade;
                                ?>">Excluir</a>
                         </td>
                     </tr>

@@ -19,6 +19,10 @@
             <label for="nomeEstado">Nome Estado</label>
             <input name="nomeEstado" type="text" class="col-sm-3 col-form-label form-control"  id="nomeEstado">
             
+            <div class="form-group">
+            <label for="uf">UF</label>
+            <input name="uf" type="text" class="col-sm-3 col-form-label form-control"  id="uf">
+            
         <input class="btn btn-success" type="submit" value="Salvar"/>
         <input class="btn btn-secondary" type="reset" value="Limpar"/>
         <?php form_close(); ?>
@@ -28,24 +32,27 @@
         
 
         <table id="contatos" class="table table-striped">
-        <caption>Contatos</caption>
+        <caption>Estados</caption>
 
 
         <thead>
             <tr>
-                <th class="table-dark">Estado</th>
-                
+                <th class="table-dark">ESTADO</th>
+                <th class="table-dark">UF</th>
+                <th class="table-dark">FUNÇÃO</th>
+               
             </tr>
 
         </thead>
         <tbody>
             <?php if ($estado == FALSE): ?>
-                <tr><td>Nenhum contato encontrado!</td></tr>
+                <tr><td>Nenhum estado encontrado!</td></tr>
             <?php else: ?>
                 <?php foreach ($estado as $row): ?>
                     <tr>
                         <td><?php echo $row->nomeEstado; ?></td>
-                        <td>
+                        <td><?php echo $row->uf; ?></td>
+                                                <td>
                             <a class="btn btn-success" href="<?php
                             echo base_url() .
                             'estado/editar/' . $row->idestado;
@@ -62,4 +69,7 @@
         </tbody>
     </table>
 
- 
+    <p></p>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+    </div>
+        </div>

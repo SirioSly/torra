@@ -14,23 +14,6 @@ class Cliente_model extends CI_Model{
     return $query->result();
     }
     
-    function inserir($c){
-        return $this->db->insert('cliente',$c);
-    }
-    function deletar($id){
-        $this->db->where('idcliente',$id);
-        return $this->db->delete('cliente');
-    }
-    function editar($id){
-        $this->db->where('idcliente',$id);
-        $result = $this->db->get('cliente');
-        return $result->result();
-    }
-    function atualizar($data){
-        $this->db->where('idcliente',$data['idcliente']);
-        $this->db->set($data);
-        return $this->db->update('cliente');
-    }
-    
+     
 }
 

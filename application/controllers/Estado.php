@@ -23,7 +23,7 @@ class Estado extends CI_Controller {
     
     public function inserir(){
         $dados['nomeEstado'] = $this->input->post('nomeEstado');
-        
+        $dados['uf'] = $this->input->post('uf');
         $result = $this->estado->inserir($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucesso', 'msg');
@@ -56,9 +56,9 @@ class Estado extends CI_Controller {
         
     }
     public function atualizar(){
-        $data['id'] = $this->input->post('id');
+        $data['idestado'] = $this->input->post('idestado');
         $data['nomeEstado'] = mb_convert_case ($this->input->post('nomeEstado'), MB_CASE_UPPER);
-        
+        $data['uf'] = mb_convert_case ($this->input->post('uf'), MB_CASE_UPPER);
          $result = $this->estado->atualizar($data);
         if ($result == TRUE){
             $this->session->set_flashdata('sucessoA', 'msg');

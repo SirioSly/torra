@@ -8,7 +8,7 @@ class Cidade extends CI_Controller {
         parent::__construct();
         
         $this->load->model('Cidade_model','cidade'); 
-        $this->load->model('Estado_model','Estado'); 
+        $this->load->model('Estado_model','estado'); 
       
         //contatos é um alias para o Contatos_model 
     }
@@ -53,7 +53,7 @@ class Cidade extends CI_Controller {
         $this->load->view('template/header');
         $data['acronico'] = "MPF";
         $data['completo'] = "Meu Projeto Framework";
-        $data['cidade'] = $this->cidade->editar($id);
+        $data['cidadeEditar'] = $this->cidade->editar($id);
         $data['estado'] = $this->estado->listar();
         $this->load->view('cidadeEditar', $data);
         $this->load->view('template/footer');
@@ -61,7 +61,7 @@ class Cidade extends CI_Controller {
     }
     public function atualizar(){
         $data['idcidade'] = $this->input->post('idcidade');
-        $data['nomecidade'] = mb_convert_case ($this->input->post('nomecidade'), MB_CASE_UPPER);
+        $data['nomeCidade'] = mb_convert_case ($this->input->post('nomeCidade'), MB_CASE_UPPER);
         $data['idestado'] = $this->input->post('idestado');
         
          $result = $this->cidade->atualizar($data);

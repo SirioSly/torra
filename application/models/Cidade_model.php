@@ -10,9 +10,8 @@ class Cidade_model extends CI_Model{
     function listar(){
         $this->db->select('*');
         $this->db->from('cidade');
-        $this->db->join('estado','estado.idestado = estado.idcidade');
+        $this->db->join('estado','estado.idestado = cidade.idestado');
         $this->db->order_by('nomeCidade','ASC');
-        $this->db->order_by('nome','ASC');
         $query=$this->db->get();
     return $query->result();
     }
