@@ -1,7 +1,8 @@
      
        <a class="btn btn-primary" href="<?php echo base_url() . 'clienteNovo'; ?>">Adicionar Cliente</a>
 
-<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a>
+<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a> 
+<br>
         <p></p>
         <?php form_close(); ?>
         <p></p>

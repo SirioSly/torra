@@ -57,7 +57,7 @@ and open the template in the editor.
     <body>
         <?php // if ($this->session->userdata('estou_logado')) { ?>
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg  navbar-white bg-white">
                     <a class="navbar-brand" href="<?php echo base_url() . 'home'; ?>">Lojão Torra Torra</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -86,13 +86,22 @@ and open the template in the editor.
                              
                                 </div>
                             </li>
+                            
+                           <li class="nav-item active">
+                               <a class="nav-link" href="<?php echo base_url() . 'venda'; ?>">Venda <span class="sr-only">(current)</span></a>
+                            </li>
+                            
+                            <li class="nav-item active">
+                               <a class="nav-link" href="<?php echo base_url() . 'relatorio'; ?>">Relatorio <span class="sr-only">(current)</span></a>
+                            </li>
                         </ul>
                     </div>
+                     &nbsp;<a class="btn btn-primary mb-2 float-right" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
                     <?php
                     if ($this->session->userdata('estou_logado')) {
                         echo $this->session->userdata('logado')->nomeUsuario;
                         ?>
-                        &nbsp;<a class="btn btn-primary mb-2" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
+                        
                     <?php } ?>
                 </nav>
             </div>
