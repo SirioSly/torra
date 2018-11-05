@@ -13,8 +13,8 @@ class Usuario extends CI_Controller {
 
     public function index() {
         $this->load->view('template/header');
-        $dados['acronico'] = "MPF";
-        $dados['completo'] = "Meu Projeto Framework";
+        $dados['acronico'] = "Torra-Torra";
+        $dados['completo'] = "Torra";
         $dados['usuario'] = $this->usuario->listar();
         $this->load->view('usuario', $dados);
         $this->load->view('template/footer');
