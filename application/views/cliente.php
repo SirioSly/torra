@@ -16,10 +16,10 @@
 
         <thead>
             <tr>
-                <th class="table-dark">Usuário</th>
-                <th class="table-dark">User</th>
-                <th class="table-dark">Perfil Acesso</th>
-                <th class="table-dark">Funções</th>
+                <th class="table-dark">Nome</th>
+                <th class="table-dark">Endereço</th>
+                <th class="table-dark">Fone</th>
+                <th class="table-dark">E-mail</th>
                 
             </tr>
 
@@ -30,9 +30,10 @@
             <?php else: ?>
                 <?php foreach ($cliente as $row): ?>
                     <tr>
-                        <td><?php echo $row->nomeUsuario; ?></td>
-                        <td><?php echo $row->user; ?></td>
-                        <td><?php echo $row->perfilAcesso; ?></td>
+                        <td><?php echo $row->nome; ?></td>
+                        <td><?php echo $row->endereco; ?></td>
+                        <td><?php echo $row->fone; ?></td>
+                        <td><?php echo $row->email; ?></td>
                         <td>
                             <a class="btn btn-success" href="<?php
                             echo base_url() .
