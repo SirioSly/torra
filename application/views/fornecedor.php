@@ -17,23 +17,23 @@
         ?>
         <?php echo form_open('fornecedor/inserir'); ?>
 <div class="signupForm">
-            <label for="nomeFornecedor">Nome</label>
-            <input name="nomeFornecedor" type="text" class="inputFields"  id="nomeFornecedor"> 
+            <label for="nomeForce">Nome</label>
+            <input name="nomeForce" type="text" class="inputFields"  id="nomeForce"> 
         </div>
 
         <div class="signupForm">
-            <label for="user">Contato</label>
-            <input class="inputFields" id="user" name="user" type="text" required/>
+            <label for="contatoForce">Contato</label>
+            <input class="inputFields" id="contatoForce" name="contatoForce" type="text" required/>
         </div>
         
          <div class="signupForm">
-             <label for="user">Número</label>
-            <input class="inputFields" id="user" name="user" type="text" required/>
+             <label for="numero">Número</label>
+            <input class="inputFields" id="numero" name="numero" type="text" required/>
         </div>
 
          <div class="signupForm">
-             <label for="user">Email</label>
-            <input class="inputFields" id="user" name="user" type="text" required/>
+             <label for="email">Email</label>
+            <input class="inputFields" id="email" name="email" type="text" required/>
         </div>
       
       <div class="signupForm">
@@ -41,6 +41,7 @@
 <!--        <input class="btn btn-dark" type="reset" value="Limpar"/>-->
 <!--        <a class="btn btn-primary" id="btn-lista" href="#">Listar Usuário</a>-->
     <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+    <a class="btn btn-primary" id="btn-lista" href="#">Listar Fornecedor</a> 
       </div>
         <p></p>
         <?php form_close(); ?>
@@ -55,10 +56,10 @@
 
         <thead>
             <tr>
-                <th class="table-dark">Usuário</th>
-                <th class="table-dark">User</th>
-                <th class="table-dark">Perfil Acesso</th>
-                <th class="table-dark">Funções</th>
+                <th class="table-dark">Nome fornecedor</th>
+                <th class="table-dark">Contato</th>
+                <th class="table-dark">Fone</th>
+                <th class="table-dark">Email</th>
                 
             </tr>
 
@@ -69,9 +70,10 @@
             <?php else: ?>
                 <?php foreach ($fornecedor as $row): ?>
                     <tr>
-                        <td><?php echo $row->nomeFornecedor; ?></td>
-                        <td><?php echo $row->user; ?></td>
-                        <td><?php echo $row->perfilAcesso; ?></td>
+                        <td><?php echo $row->nomeForce; ?></td>
+                        <td><?php echo $row->contatoForce; ?></td>
+                        <td><?php echo $row->numero; ?></td>
+                        <td><?php echo $row->email; ?></td>
                         <td>
                             <a class="btn btn-success" href="<?php
                             echo base_url() .

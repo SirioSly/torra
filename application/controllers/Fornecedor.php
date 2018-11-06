@@ -21,10 +21,10 @@ class Fornecedor extends CI_Controller {
     }
 
     public function inserir() {
-        $data['nomeUsuario'] = mb_convert_case ($this->input->post('nomeUsuario'), MB_CASE_UPPER);
-        $data['user'] = mb_convert_case ($this->input->post('user'), MB_CASE_LOWER);
-        $data['senha'] = md5($this->input->post('senha'));
-        $data['perfilAcesso']= mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_UPPER);
+        $data['nomeForce'] = mb_convert_case ($this->input->post('nomeForce'), MB_CASE_UPPER);
+        $data['contatoForce'] = mb_convert_case ($this->input->post('contatoForce'), MB_CASE_UPPER);
+        $data['numero'] = mb_convert_case ($this->input->post('numero'), MB_CASE_UPPER);
+        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
         
          $result = $this->fornecedor->inserir($data);
         if ($result == TRUE){
@@ -60,11 +60,11 @@ class Fornecedor extends CI_Controller {
     }
 
    public function atualizar(){
-        $data['idfornecedor'] = $this->input->post('idfornecedor');
-        $data['nome'] = mb_convert_case ($this->input->post('nome'), MB_CASE_UPPER);
-        $data['user'] = mb_convert_case ($this->input->post('user'), MB_CASE_LOWER);
-        $data['senha'] = md5($this->input->post('senha'));
-        $data['perfilAcesso']= mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_UPPER);
+        $data['idforce'] = $this->input->post('idforce');
+        $data['nomeForce'] = mb_convert_case ($this->input->post('nomeForce'), MB_CASE_UPPER);
+        $data['contatoForce'] = mb_convert_case ($this->input->post('contatoForce'), MB_CASE_UPPER);
+        $data['numero'] = mb_convert_case ($this->input->post('numero'), MB_CASE_UPPER);
+        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
         
         $result = $this->fornecedor->atualizar($data);
         if ($result == TRUE){
