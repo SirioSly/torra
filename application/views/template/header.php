@@ -39,6 +39,10 @@ and open the template in the editor.
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/usuariomain.css">
+	<link rel="stylesheet" type="text/css" href="css/usuarioutil.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/userjs.js"></script>
 <!--===============================================================================================-->
 
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -58,7 +62,7 @@ and open the template in the editor.
         <?php // if ($this->session->userdata('estou_logado')) { ?>
             <div class="container">
                 <nav class="navbar navbar-expand-lg  navbar-white bg-white">
-                    <a class="navbar-brand" href="<?php echo base_url() . 'home'; ?>">Lojão Torra Torra</a>
+                    <a class="navbar-brand" href="<?php echo base_url() . 'home' ?>"> Lojão Torra-Torra</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -76,6 +80,7 @@ and open the template in the editor.
                                    
                                    
                                    
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'usuario'; ?>">Usuário</a>
                                         <a class="dropdown-item" href="<?php echo base_url() . 'cliente'; ?>">Cliente</a>
                                         <a class="dropdown-item" href="<?php echo base_url() . 'fornecedor'; ?>">Fornecedor</a>
                                         <a class="dropdown-item" href="<?php echo base_url() . 'cidade'; ?>">Cidade</a>
@@ -88,18 +93,18 @@ and open the template in the editor.
                             </li>
                             
                            <li class="nav-item active">
-                               <a class="nav-link" href="<?php echo base_url() . 'venda'; ?>">Venda <span class="sr-only">(current)</span></a>
+                               <a class="nav-link" href="<?php echo base_url() . 'venda'; ?>"> Venda <span class="sr-only">(current)</span></a>
                             </li>
                             
                             <li class="nav-item active">
-                               <a class="nav-link" href="<?php echo base_url() . 'relatorio'; ?>">Relatorio <span class="sr-only">(current)</span></a>
+                               <a class="nav-link" href="<?php echo base_url() . 'relatorio'; ?>"> Relatorio <span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
                     </div>
-                     &nbsp;<a class="btn btn-primary mb-2 float-right" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
+                     &nbsp;<a class="btn btn-light mb-2 float-right" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
                     <?php
                     if ($this->session->userdata('estou_logado')) {
-                        echo $this->session->userdata('logado')->nomeUsuario;
+                        echo $this->session->userdata('logado')-> nomeUsuario;
                         ?>
                         
                     <?php } ?>

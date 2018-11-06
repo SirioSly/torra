@@ -1,47 +1,50 @@
-    <!DOCTYPE html>
+ <!DOCTYPE html>
 
-    <div class="container">
-
-        <div class="row"></div>
-
-        <div class="col-xs-1 col-sm-1 col-lg-3"></div>
-        <div class="col-xs-10 col-sm-10 col-lg-6">
+  <div class="signupSection">
+  <div class="info">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <h2>Cadastro de Usuários</h2>
+    <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+    <p>Lojão Torra-Torra</p>
+  </div>
         <?php
-        // put your code here
-        
         echo "<br>";
-    //        echo $completo;
         echo "<p>";
         ?>
-        <h2>Usuário</h2>
         <?php echo form_open('usuario/inserir'); ?>
-        <div class="form-group">
-            <label for="nomeUsuario">Nome Usuário</label>
-            <input name="nomeUsuario" type="text" class="col-sm-6 form-control"  id="nomeUsuario"> 
+<div class="signupForm">
+            <label for="nomeUsuario">Nome Usuário:</label>
+            <input name="nomeUsuario" type="text" class="inputFields"  id="nomeUsuario"> 
         </div>
 
-        <div class="form-group">
-            <label for="user">Usuário</label>
-            <input class="col-sm-6 form-control" id="user" name="user" type="text" required/>
+        <div class="signupForm">
+            <label for="user">Usuário:</label>
+            <input class="inputFields" id="user" name="user" type="text" required/>
         </div>
         
-         <div class="form-group">
-            <label for="senha">Senha</label>
-            <input class="col-sm-6 form-control " id="senha" name="senha" required placeholder="Minimo 8 caracteres!" minlength="8" type="password" required/>
+         <div class="signupForm">
+            <label for="senha">Senha:</label>
+            <input class="inputFields" id="senha" name="senha" required placeholder="Mínimo 8 caracteres" minlength="8" type="password" required/>
         </div>
-        
-         <div class="form-group">
-            <label for="perfilAcesso">Perfil Acesso</label>
-            <select class="col-sm-6 form-control" id="perfilAcesso" name="perfilAcesso" type="text"/>
+
+         <div class="signupForm">
+            <label for="perfilAcesso">Perfil Acesso:</label>
+            <select class="inputFields" id="perfilAcesso" name="perfilAcesso" type="text"/>
             <option value=""></option>
             <option value="ADM">Administrador</option>
             <option value="USER">Usuário</option>
          </select>
         </div>
-        
-        <input class="btn btn-success" type="submit" value="Salvar"/>
-        <input class="btn btn-secondary" type="reset" value="Limpar"/>
-        <a class="btn btn-primary" id="btn-lista" href="#">Listar Usuário</a>
+      <div class="signupForm">
+        <input class="btn btn-dark" type="submit" value="Salvar"/>
+<!--        <input class="btn btn-dark" type="reset" value="Limpar"/>-->
+<!--        <a class="btn btn-primary" id="btn-lista" href="#">Listar Usuário</a>-->
+    <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+      </div>
         <p></p>
         <?php form_close(); ?>
         <p></p>
@@ -90,7 +93,7 @@
     </table>
         </div>
     <p></p>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+<!--    <a class="btn btn-primary" href="<?php echo base_url() . 'home'; ?>">Voltar</a>-->
     </div>
         </div>
     
