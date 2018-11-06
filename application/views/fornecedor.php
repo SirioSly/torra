@@ -77,12 +77,12 @@
                         <td>
                             <a class="btn btn-success" href="<?php
                             echo base_url() .
-                            'fornecedor/editar/' . $row->idfornecedor;
+                            'fornecedor/editar/' . $row->idforce;
                             ?>">Editar</a>
                             |
                             <a class="btn btn-danger" href="<?php
                                echo base_url() . ''
-                               . 'fornecedor/excluir/' . $row->idfornecedor;
+                               . 'fornecedor/excluir/' . $row->idforce;
                                ?>">Excluir</a>
                         </td>
                     </tr>
