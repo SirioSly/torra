@@ -24,4 +24,14 @@ class Cliente extends CI_Controller {
         $this->load->view('template/footer');
     }
 
+    public function excluir($id) {
+        $result = $this->cliente->deletar($id);
+        if ($result == TRUE){
+            $this->session->set_flashdata('excluirS', 'msg');
+             redirect('cliente');
+        } else{
+            $this->session->set_flashdata('excluirF', 'msg');
+            redirect('cliente');
+        }
+    }
 }

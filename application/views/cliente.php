@@ -37,7 +37,7 @@
                         <td>
                             <a class="btn btn-success" href="<?php
                             echo base_url() .
-                            'cliente/editar/' . $row->idcliente;
+                            'clienteNovo/editar/' . $row->idcliente;
                             ?>">Editar</a>
                             |
                             <a class="btn btn-danger" href="<?php

@@ -13,7 +13,10 @@ class Cliente_model extends CI_Model{
         $query=$this->db->get();
     return $query->result();
     }
-    
+    function deletar($id){
+        $this->db->where('idcliente',$id);
+        return $this->db->delete('cliente');
+    }
      
 }
 
