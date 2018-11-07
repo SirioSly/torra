@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -114,7 +115,8 @@ and open the template in the editor.
                     <?php } ?>
                 </nav>
             </div>
-            <p></p>
-            <?php
-//        } 
+            
+           <div style="overflow: auto; border:solid 1px"> 
+      
+            
 
