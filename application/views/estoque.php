@@ -14,7 +14,7 @@
 //        echo $completo;
                 echo "<p>";
                 ?>
-                <font style="color:#EAF2F5"><h2>Estoque</h2> 
+                <font style="color:#000"><h2>Estoque</h2> 
                 <?php echo form_open('estoque/inserir'); ?>
                 <div class="form-group">
                     <label for="nomeEstoque">Nome do Produto</label>
@@ -34,7 +34,7 @@
                 </div>    
                 <div class="form-group">
                     <label for="force">Fornecedor</label>
-                    <select class="form-control" required="required" name="idforce" id="idforce">
+                    <select class="form-control" required="required" name="idforce" id="idforce"required/>
                     <option value="" >Selecionar Fornecedor ...</option>
                     <?php foreach ($fornecedor as $fornecedor): ?>
                         <option value="<?php echo $fornecedor->idforce; ?>"><?php echo $fornecedor->nomeForce; ?></option>

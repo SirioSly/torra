@@ -1,46 +1,43 @@
  <!DOCTYPE html>
 
-  <div class="container">
+  <div class="container">   
+      <div class="row"></div>
       
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
 <!--        <h2>Cadastro de Usuários</h2>
     <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
     <p>Lojão Torra-Torra</p>-->
-  </div>
+  
         <?php
         echo "<br>";
         echo "<p>";
         ?>
         <?php echo form_open('usuario/inserir'); ?>
-<div class="signupForm">
+<div class="form-group">
             <label for="nomeUsuario">Nome Usuário:</label>
-            <input name="nomeUsuario" type="text" class="form-group"  id="nomeUsuario"> 
+            <input class="col-sm-6 form-control "  name="nomeUsuario" type="text" id="nomeUsuario"> 
         </div>
 
-        <div class="signupForm">
+        <div class="form-group">
             <label for="user">Usuário:</label>
-            <input class="form-group" id="user" name="user" type="text" required/>
+            <input class="col-sm-6 form-control"  id="user" name="user" type="text" required/>
         </div>
         
-         <div class="signupForm">
+         <div class="form-group">
             <label for="senha">Senha:</label>
-            <input class="text" id="senha" name="senha" required placeholder="Mínimo 8 caracteres" minlength="8" type="password" required/>
+            <input class=" col-sm-6 form-control" class="text" id="senha" name="senha" required placeholder="Mínimo 8 caracteres" minlength="8" type="password" required/>
         </div>
 
          <div class="">
             <label for="perfilAcesso">Perfil Acesso:</label>
-            <select class="inputFields" id="perfilAcesso" name="perfilAcesso" type="text"/>
+            <select class="col-sm-6 form-control" id="perfilAcesso" name="perfilAcesso" type="text"required/>
             <option value=""></option>
             <option value="ADM">Administrador</option>
             <option value="USER">Usuário</option>
          </select>
         </div>
-      <div class="signupForm">
-        <input class="btn btn-primary btn-block btn-large" type="submit" value="Salvar"/>
+<br>
+      <div class="form-group">
+        <input class="btn btn-primary" type="submit" value="Salvar"/>
 <!--        <input class="btn btn-dark" type="reset" value="Limpar"/>-->
         <a class="btn btn-light" id="btn-lista" href="#">Listar Usuário</a>
     <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>

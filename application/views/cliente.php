@@ -1,5 +1,9 @@
      
+<div class="container">
+    <br>
        <a class="btn btn-primary" href="<?php echo base_url() . 'clienteNovo'; ?>">Adicionar Cliente</a>
+       <br>
+       <br>
 
 <!--<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a> -->
 <br>
@@ -35,7 +39,7 @@
                             <td>
                                 <a class="btn btn-success" href="<?php
                                 echo base_url() .
-                                'cliente/editar/' . $row->idcliente;
+                                'clienteNovo/editar/' . $row->idcliente;
                                 ?>">Editar</a>
                                 |
                                 <a class="btn btn-danger" href="<?php
@@ -44,6 +48,7 @@
                                    ?>">Excluir</a>
                         </td>
                     </tr>
+                    
         <?php endforeach; ?>
     <?php endif; ?>
         </tbody>
@@ -51,9 +56,7 @@
         </div>
     <p></p>
     <a class="btn btn-primary" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
-    </div>
         </div>
-    
     <script type="text/javascript">
        $(document).ready(function() {
     $('#example').DataTable();

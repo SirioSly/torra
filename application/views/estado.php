@@ -13,7 +13,8 @@
     //        echo $completo;
         echo "<p>";
         ?>
-        <font style="color:#EAF2F5"><h2>Estados</h2>
+        <font style="color:#000"><h2>Estados</h2>
+        <br>
         <?php echo form_open('estado/inserir'); ?>
         <div class="form-group">
             <label for="nomeEstado">Nome Estado</label>
@@ -22,17 +23,17 @@
             <div class="form-group">
             <label for="uf">UF</label>
             <input name="uf" type="text" class="col-sm-3 col-form-label form-control"  id="uf">
-            
+            <br>
         <input class="btn btn-success" type="submit" value="Salvar"/>
         <input class="btn btn-secondary" type="reset" value="Limpar"/>
         <?php form_close(); ?>
         <p></p>
 
         
-        
+        <br>
 
         <table id="contatos" class="table table-striped">
-        <caption>Estados</caption>
+<!--        <caption>Estados</caption>-->
 
 
         <thead>

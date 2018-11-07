@@ -1,15 +1,13 @@
  <!DOCTYPE html>
 
-  <div class="signupSection">
-  <div class="info">
+  <div class="container">
+  <div class="row">
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-        <h2>Fornecedor</h2>
+      
+<!--        <h2>Fornecedor</h2>
     <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
-    <p>Lojão Torra-Torra</p>
+    <p>Lojão Torra-Torra</p>-->
   </div>
         <?php
         echo "<br>";
@@ -18,25 +16,25 @@
         <?php echo form_open('fornecedor/inserir'); ?>
 <div class="signupForm">
             <label for="nomeForce">Nome</label>
-            <input name="nomeForce" type="text" class="inputFields"  id="nomeForce"> 
+            <input name="nomeForce" type="text" class="col-sm-6 form-control" id="nomeForce"> 
         </div>
 
-        <div class="signupForm">
+        <div class="form-group">
             <label for="contatoForce">Contato</label>
-            <input class="inputFields" id="contatoForce" name="contatoForce" type="text" required/>
+            <input class="col-sm-6 form-control" id="contatoForce" name="contatoForce" type="text" required/>
         </div>
         
-         <div class="signupForm">
+         <div class="form-group">
              <label for="numero">Número</label>
-            <input class="inputFields" id="numero" name="numero" type="text" required/>
+            <input class="col-sm-6 form-control" id="numero" name="numero" type="text" required/>
         </div>
 
-         <div class="signupForm">
+         <div class="form-group">
              <label for="email">Email</label>
-            <input class="inputFields" id="email" name="email" type="text" required/>
+            <input class="col-sm-6 form-control" id="email" name="email" type="text" required/>
         </div>
       
-      <div class="signupForm">
+      <div class="form-group">
         <input class="btn btn-dark" type="submit" value="Salvar"/>
 <!--        <input class="btn btn-dark" type="reset" value="Limpar"/>-->
 <!--        <a class="btn btn-primary" id="btn-lista" href="#">Listar Usuário</a>-->
