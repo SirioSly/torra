@@ -13,7 +13,7 @@
     //        echo $completo;
         echo "<p>";
         ?>
-        <h2>Estados</h2>
+        <font style="color:#EAF2F5"><h2>Estados</h2>
         <?php echo form_open('estado/inserir'); ?>
         <div class="form-group">
             <label for="nomeEstado">Nome Estado</label>

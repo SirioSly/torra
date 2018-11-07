@@ -8,7 +8,7 @@
 //        echo $completo;
     echo "<p>";
     ?>
-    <h2>Home</h2>
+    <font style="color:#EAF2F5"><h2>Home</h2>
     <p></p>
     <a class="btn btn-primary" href="<?php echo base_url() . 'estoque'; ?>">estoque</a>
     <p></p>

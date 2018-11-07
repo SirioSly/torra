@@ -13,7 +13,7 @@
     //        echo $completo;
         echo "<p>";
         ?>
-        <h2>Cliente</h2>
+         <font style="color:#000"><h2>Cliente</h2>
         <?php echo form_open('clienteNovo/inserir'); ?>
         <div class="form-group">
             <label for="nome">Nome Usuário</label>
@@ -71,12 +71,12 @@
         
         <div class="form-group">
             <label for="contato">Contato</label>
-            <input class="col-sm-6 form-control" id="contato" name="contato" type="text" required/>
+            <input class="col-sm-6 form-control" id="contato" name="contato" type="text" />
         </div>
         
         <div class="form-group">
             <label for="dataAniver">Data de Aniver</label>
-            <input class="col-sm-6 form-control" id="dataAniver" name="dataAniver" type="text" required/>
+            <input class="col-sm-6 form-control" id="dataAniver" name="dataAniver" type="text" />
         </div>
         
 <!--        <div class="form-group">

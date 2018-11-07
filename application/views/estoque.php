@@ -1,5 +1,7 @@
-<div class="contener">
-    <div class="row">
+<div class="container">
+    <div class="info"></div>
+    
+    
         <!responsivo para smartphone, tablet e pc-->
         <div class="col-xs-1 col-sm-1 col-lg-3"></div>
         <div class="col-xs-10 col-sm-10 col-lg-6">
@@ -7,12 +9,12 @@
 
                 <?php
                 // put your code here
-                echo $acronico;
+//                echo $acronico;
                 echo "<br>";
 //        echo $completo;
                 echo "<p>";
                 ?>
-                <h2>Estoque</h2> 
+                <font style="color:#EAF2F5"><h2>Estoque</h2> 
                 <?php echo form_open('estoque/inserir'); ?>
                 <div class="form-group">
                     <label for="nomeEstoque">Nome do Produto</label>
@@ -86,7 +88,7 @@
                         <tbody>
 
 
-                            <?php if ($Estoque == FALSE): ?>
+                            <?php if ($estoque == FALSE): ?>
                                 <tr>
                                     <td>Nenhum Produto Encontrado!</td></tr>
                             <?php else: ?>

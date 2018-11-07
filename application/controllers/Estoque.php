@@ -20,6 +20,7 @@ class Estoque extends CI_Controller {
         $dados['acronico'] = "LTT";
         $dados['completo'] = "Lojao Torra Torra";
         $dados['estoque'] = $this->estoque->listar();
+        $dados['fornecedor'] = $this->fornecedor->listar();
 //        $this->db->join('fornecedor','fornecedor.idforce = estoque.idestoque');
         $this->load->view('estoque', $dados);
         $this->load->view('template/footer');
@@ -30,11 +31,11 @@ class Estoque extends CI_Controller {
         $data['qnt'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
         $data['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
         $data['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
-        $data['fornecedor'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
+        $data['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
         $data['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
         $data['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
-        $data['produtocomposto'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
-        $data['status'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
+        $data['prodComp'] = mb_convert_case ($this->input->post('prodComp'), MB_CASE_UPPER);
+        $data['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
                                  
          $result = $this->estoque->inserir($data);
         if ($result == TRUE){

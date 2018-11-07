@@ -13,7 +13,7 @@
     //        echo $completo;
         echo "<p>";
         ?>
-        <h2>Cadastro de cidade</h2>
+            <font style="color:#EAF2F5"><h2>Cadastro de cidade</h2>
         <?php echo form_open('cidade/inserir'); ?>
         <div class="form-group">
             <label for="nomecidade">Nome da cidade</label>

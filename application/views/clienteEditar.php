@@ -6,7 +6,7 @@
 //        echo $completo;
         echo "<p>";
         ?>
-        <h2>Editar cliente</h2>
+       <h2>Editar cliente</h2>
        
         <?php echo form_open('clienteNovo/atualizar'); ?>
         
