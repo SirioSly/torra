@@ -7,6 +7,8 @@ and open the template in the editor.
 <html>
     <head>
         <!--<meta charset="UTF-8">-->
+        <div class="col-xs-1 col-sm-1 col-lg-3"></div>
+      <div class="col-xs-10 col-sm-10 col-lg-6"></div>
 
         <title>Meu Projeto Framework</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,6 +44,7 @@ and open the template in the editor.
 	<link rel="stylesheet" type="text/css" href="css/usuariomain.css">
 	<link rel="stylesheet" type="text/css" href="css/usuarioutil.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/telacadastro.css">
 	<script src="js/userjs.js"></script>
 <!--===============================================================================================-->
 
@@ -53,6 +56,7 @@ and open the template in the editor.
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+        
 
 
 
