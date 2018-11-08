@@ -9,10 +9,10 @@ class Pedido_model extends CI_Model{
     
     function listar(){
         $this->db->select('*');
-        $this->db->from('predido');
+        $this->db->from('pedido');
         $this->db->join('cliente','cliente.idcliente = pedido.idcliente');
         $this->db->join('usuario','usuario.idusuario = pedido.idusuario');
-        $this->db->join('meiopag','meiopag.idmeiopag = pedido.idmeiopag');
+        $this->db->join('meioPag','meioPag.idmeioPag = pedido.idmeioPag');
         $query=$this->db->get();
     return $query->result();
     }

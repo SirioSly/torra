@@ -10,7 +10,7 @@ class Pedido extends CI_Controller {
         $this->load->model('Pedido_model','pedido'); 
         $this->load->model('Cliente_model','cliente'); 
         $this->load->model('Usuario_model','usuario');
-        $this->load->model('Meiopag_model','meiopag');
+        $this->load->model('MeioPag_model','meioPag');
       
         //contatos é um alias para o Contatos_model 
     }
@@ -19,34 +19,37 @@ class Pedido extends CI_Controller {
         $this->load->view('template/header');
         $dados['acronico'] = "MPF";
         $dados['completo'] = "Meu Projeto Framework";
-        $dados['cidade'] = $this->cidade->listar();
-        $dados['estado'] = $this->estado->listar();
-        $this->load->view('cidade', $dados);
+        $dados['pedido'] = $this->pedido->listar();
+        $dados['cliente'] = $this->cliente->listar();
+        $dados['meioPag'] = $this->meioPag->listar();
+        $this->load->view('pedido', $dados);
         $this->load->view('template/footer');
     }
     
     public function inserir(){
-        $dados['nomecidade'] = $this->input->post('nomecidade');
-        $dados['idestado'] = $this->input->post('idestado');
+        $dados['idcliente'] = $this->input->post('idcliente');
+        $dados['idusuario'] = $this->session->userdata('logado')-> idusuario;
+        $dados['data'] = now();
+        $dados['idmeioPag'] = $this->input->post('idmeioPag');
         
-        $result = $this->cidade->inserir($dados);
+        $result = $this->pedido->inserir($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucesso', 'msg');
-             redirect('cidade');
+             redirect('pedido');
         } else{
             $this->session->set_flashdata('falha', 'msg');
-            redirect('cidade');
+            redirect('pedido');
         }
     }
 
         public function excluir($id){
-         $result = $this->cidade->deletar($id);
+         $result = $this->pedido->deletar($id);
         if ($result == TRUE){
             $this->session->set_flashdata('excluirS', 'msg');
-             redirect('cidade');
+             redirect('pedido');
         } else{
             $this->session->set_flashdata('excluirF', 'msg');
-            redirect('cidade');
+            redirect('pedido');
         }
         
     }
@@ -55,15 +58,14 @@ class Pedido extends CI_Controller {
         $this->load->view('template/header');
         $data['acronico'] = "MPF";
         $data['completo'] = "Meu Projeto Framework";
-        $data['cidadeEditar'] = $this->cidade->editar($id);
-        $data['estado'] = $this->estado->listar();
+        $data['pedidoEditar'] = $this->pedido->editar($id);
         $this->load->view('cidadeEditar', $data);
         $this->load->view('template/footer');
         
     }
     public function atualizar(){
-        $data['idcidade'] = $this->input->post('idcidade');
-        $data['nomeCidade'] = mb_convert_case ($this->input->post('nomeCidade'), MB_CASE_UPPER);
+        $data['idpedido'] = $this->input->post('idpedido');
+        $data['nomeCidade'] = mb_convert_case ($this->input->post('nome'), MB_CASE_UPPER);
         $data['idestado'] = $this->input->post('idestado');
         
          $result = $this->cidade->atualizar($data);
