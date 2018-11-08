@@ -10,23 +10,24 @@
         ?>
         <?php echo form_open('fornecedor/inserir'); ?>
 <div class="form-group">
-            <label for="nomeForce">Nome:</label>
+            <label for="nomeForce">Nome<h11>*</h11></label>
             <input name="nomeForce" type="text" class="col-sm-4 form-control" id="nomeForce" required/> 
         </div>
 
         <div class="form-group">
-            <label for="contatoForce">Contato:</label>
+            <label for="contatoForce">Endereço<h11>*</h11></label>
             <input class="col-sm-4 form-control" id="contatoForce" name="contatoForce" type="text" required/>
         </div>
         
          <div class="form-group">
-             <label for="numero">Número:</label>
-            <input class="col-sm-4 form-control" id="numero" name="numero" type="text" required/>
+             <label for="numero">Telefone<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="numero" name="numero" type="text" required placeholder="XX XXXXX-XXXX" required= maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+      OnKeyPress="formatar('## #####-####', this)"/>
         </div>
 
          <div class="form-group">
-             <label for="email">E-mail:</label>
-            <input class="col-sm-4 form-control" id="email" name="email" type="text" required/>
+             <label for="email">E-mail<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="email" name="email" type="text" required placeholder="email@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
         </div>
       
       <div class="form-group">
@@ -50,7 +51,7 @@
         <thead>
             <tr>
                 <th class="table-dark">Nome do Fornecedor</th>
-                <th class="table-dark">Contato</th>
+                <th class="table-dark">Endereço</th>
                 <th class="table-dark">Fone</th>
                 <th class="table-dark">Email</th>
                 <th class="table-dark">Função</th>

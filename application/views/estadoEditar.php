@@ -8,11 +8,11 @@
         <?php echo form_open('estado/atualizar'); ?>
             <div class="form-group">
             <input type="hidden" name="idestado" id="idestado" value="<?php echo $estadoEditar[0]->idestado; ?>">
-            <label for="nomeEstado">Nome do Estado:</label>
+            <label for="nomeEstado">Nome do Estado<h11>*</h11></label>
             <input name="nomeEstado" type="text" id="nomeEstado" class="col-sm-5 form-control" required value="<?php echo $estadoEditar[0]->nomeEstado; ?>" required/>
             </div>
             <p></p>
-            <label>UF:</label>
+            <label>UF<h11>*</h11></label>
             <input name="uf" type="text"class="col-sm-1 form-control" value="<?php echo $estadoEditar[0]->uf; ?>" required/>
             <p></p>
             

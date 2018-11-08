@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="row"></div>
+<!--        <div class="row"></div>-->
 
         <?php
         // put your code here
@@ -13,11 +13,11 @@
         ?>
         <?php echo form_open('cidade/inserir'); ?>
         <div class="form-group">
-            <label for="nomecidade">Nome da Cidade:</label>
+            <label for="nomecidade">Nome da Cidade<h11>*</h11></label>
             <input name="nomecidade" type="text" class="col-sm-3 form-control"  id="nomecidade" required/>    
             <br>
             <div class="form-group">
-        <label for="idestado">Estado:</label>
+        <label for="idestado">Estado<h11>*</h11></label>
         <select class="col-sm-3 form-control" aria-label="ngSelected demo" required="requered"
                 id="idestado" name="idestado" type="name" required/>
         <option>Selecionar Estado... </option>

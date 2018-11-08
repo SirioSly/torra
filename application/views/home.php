@@ -25,7 +25,6 @@
     <a class="btn btn-primary" href="<?php echo base_url() . 'cidade'; ?>">Cadastro de cidade</a>
     <br>
     
-
 </div>
-
+ 
 

@@ -10,14 +10,14 @@
         <?php echo form_open('cidade/atualizar'); ?>
             <div class="form-group">
             <input type="hidden" name="idcidade" id="idcidade" value="<?php echo $cidadeEditar[0]->idcidade; ?>">
-            <label for="nomeCidade">Nome da Cidade:</label>
+            <label for="nomeCidade">Nome da Cidade<h11>*</h11></label>
             <input name="nomeCidade" type="text" id="nomeCidade" class="col-sm-3 form-control" required value="<?php echo $cidadeEditar[0]->nomeCidade; ?>" required/>
             </div>
             <p></p>
             
             
              <div class="form-group">
-                <label for="idestado">Estado:</label>
+                <label for="idestado">Estado<h11>*</h11></label>
                 <select class="col-sm-3 form-control" aria-label="ngSelected demo" required="requered"
                         id="idestado" name="idestado" type="name" required/>
                 <option>Selecionar estado</option>

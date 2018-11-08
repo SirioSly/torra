@@ -15,11 +15,11 @@
         <br>
         <?php echo form_open('estado/inserir'); ?>
         <div class="form-group">
-            <label for="nomeEstado">Nome do Estado:</label>
+            <label for="nomeEstado">Nome do Estado<h11>*</h11></label>
             <input name="nomeEstado" type="text" class="col-sm-5 col-form-label form-control"  id="nomeEstado" required/>
             <br>
             <div class="form-group">
-            <label for="uf">UF:</label>
+            <label for="uf">UF<h11>*</h11></label>
             <input name="uf" type="text" class="col-sm-2 col-form-label form-control"  id="uf" required/>
             <br>
         <input class="btn btn-primary" type="submit" value="Salvar"/>

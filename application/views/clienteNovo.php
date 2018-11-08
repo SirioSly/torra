@@ -15,38 +15,39 @@
         ?>
         <?php echo form_open('clienteNovo/inserir'); ?>
         <div class="form-group">
-            <label for="nome">Nome Usuário:</label>
+            <label for="nome">Nome Usuário<h11>*</h11></label>
             <input name="nome" type="text" class="col-sm-4 form-control"  id="nome" required/> 
         </div>
 
         
         <div class="form-group">
-            <label for="endereco">Endereço:</label>
+            <label for="endereco">Endereço<h11>*</h11></label>
             <input class="col-sm-4 form-control" id="endereco" name="endereco" type="text" required/>
         </div>
         
         <div class="form-group">
-            <label for="fone">Fone:</label>
-            <input class="col-sm-4 form-control" id="fone" name="fone" type="text" required/>
+            <label for="fone">Telefone<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="fone" name="fone" type="text" placeholder="XX XXXXX-XXXX" required= maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+      OnKeyPress="formatar('## #####-####', this)"/>
+        </div>
+        
+        <div class="form-group">   
+            <label for="email">E-mail<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="email" name="email" type="text" placeholder="email@email.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+        </div> 
+        
+        <div class="form-group">
+            <label for="cnpj">CNPJ<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="cnpj" name="cnpj" type="text" maxlength="14" placeholder="Apenas números"/>
         </div>
         
         <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input class="col-sm-4 form-control" id="email" name="email" type="text" required/>
-        </div>
-        
-        <div class="form-group">
-            <label for="cnpj">CNPJ:</label>
-            <input class="col-sm-4 form-control" id="cnpj" name="cnpj" type="text" />
-        </div>
-        
-        <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input class="col-sm-4 form-control" id="cpf" name="cpf" type="text" required/>
+            <label for="cpf">CPF<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="cpf" name="cpf" type="text" placeholder="Apenas números" maxlength="11" required/>
         </div>
         
            <div class="form-group">
-        <label for="idestado">Estado:</label>
+        <label for="idestado">Estado<h11>*</h11></label>
         <select class="col-sm-4 form-control" aria-label="ngSelected demo" required="requered"
                 id="idestado" name="idestado" type="name" required/>
         <option>Selecionar Estado... </option>
@@ -57,7 +58,7 @@
     </div>
         
            <div class="form-group">
-        <label for="idcidade">Cidade:</label>
+        <label for="idcidade">Cidade<h11>*</h11></label>
         <select class="col-sm-4 form-control" aria-label="ngSelected demo" required="requered"
                 id="idcidade" name="idcidade" type="name" required/>
         <option>Selecionar Estado... </option>
@@ -69,13 +70,13 @@
         
         
         <div class="form-group">
-            <label for="contato">Contato:</label>
-            <input class="col-sm-4 form-control" id="contato" name="contato" type="text" required/>
+            <label for="contato">Contato Empresarial<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="contato" name="contato" type="text"/>
         </div>
         
         <div class="form-group">
-            <label for="dataAniver">Data de Aniversário:</label>
-            <input class="col-sm-4 form-control" id="dataAniver" name="dataAniver" type="text" required/>
+            <label for="dataAniver">Data de Nascimento<h11>*</h11></label>
+            <input class="col-sm-4 form-control" id="dataAniver" name="dataAniver" type="date" required maxlength="10">
         </div>
         
 <!--        <div class="form-group">

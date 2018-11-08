@@ -42,11 +42,9 @@ and open the template in the editor.
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/usuariomain.css">
-<!--	<link rel="stylesheet" type="text/css" href="css/usuarioutil.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/telacadastro.css">-->
-	<script src="js/userjs.js"></script>
+<!--	<link rel="stylesheet" type="text/css" href="css/usuariomain.css">-->
+	<link rel="stylesheet" type="text/css" href="css/usuarioutil.css"><!--
+        <script src="js/userjs.js"></script>-->
 <!--===============================================================================================-->
 
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

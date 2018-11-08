@@ -10,23 +10,23 @@
                 ?>
                 <?php echo form_open('estoque/inserir'); ?>
                 <div class="form-group">
-                    <label for="nomeEstoque">Nome do Produto:</label>
+                    <label for="nomeEstoque">Nome do Produto<h11>*</h11></label>
                     <input class="col-sm-5 form-control" type="text" id="nomeProduto" name="Produto"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="qntEstoque">Quantidade:</label>
+                    <label for="qntEstoque">Quantidade<h11>*</h11></label>
                     <input class="col-sm-1 form-control" type="text" id="qntEstoque" name="quantidadeEstoque"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="valorVenda">Valor de Venda:</label>
+                    <label for="valorVenda">Valor de Venda<h11>*</h11></label>
                     <input class="col-sm-2 form-control" type="text" id="valorVenda" name="valorVenda"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="custo">Custo:</label>
+                    <label for="custo">Custo<h11>*</h11></label>
                     <input class="col-sm-2 form-control" type="text" id="custo" name="custo"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="force">Fornecedor:</label>
+                    <label for="force">Fornecedor<h11>*</h11></label>
                     <select class="col-sm-3 form-control" required="required" name="idforce" id="idforce"required/>
                     <option value="" >Selecionar Fornecedor ...</option>
                     <?php foreach ($fornecedor as $fornecedor): ?>
@@ -35,15 +35,15 @@
                     </select>
                 </div>    
                 <div class="form-group">
-                    <label for="lote">Lote:</label>
+                    <label for="lote">Lote<h11>*</h11></label>
                     <input class="col-sm-2 form-control" type="text" id="valorVenda" name="lote"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="validade">Validade:</label>
+                    <label for="validade">Validade<h11>*</h11></label>
                     <input class="col-sm-2 form-control" type="date" id="validade" name="validade"  required/>
                 </div> 
                 <div class="form-group">
-                    <label for="prodComp">Produto Composto:</label>
+                    <label for="prodComp">Produto Composto<h11>*</h11></label>
                     <input class="col-sm-4 form-control" type="text" id="prodComp" name="validade"  required/>
                 </div>    
                 <div class="form-group form-check">

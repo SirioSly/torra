@@ -13,24 +13,24 @@
         ?>
         <?php echo form_open('usuario/inserir'); ?>
 <div class="form-group">
-            <label for="nomeUsuario">Nome Usuário:</label>
+            <label for="nomeUsuario">Nome Usuário<h11>*</h11></label>
             <input class="col-sm-4 form-control "  name="nomeUsuario" type="text" id="nomeUsuario"> 
         </div>
 
         <div class="form-group">
-            <label for="user">Usuário:</label>
+            <label for="user">Usuário<h11>*</h11></label>
             <input class="col-sm-4 form-control"  id="user" name="user" type="text" required/>
         </div>
         
          <div class="form-group">
-            <label for="senha">Senha:</label>
+            <label for="senha">Senha<h11>*</h11></label>
             <input class=" col-sm-4 form-control" class="text" id="senha" name="senha" required placeholder="Mínimo 8 caracteres" minlength="8" type="password" required/>
         </div>
 
          <div class="">
-            <label for="perfilAcesso">Perfil Acesso:</label>
+            <label for="perfilAcesso">Perfil Acesso<h11>*</h11></label>
             <select class="col-sm-4 form-control" id="perfilAcesso" name="perfilAcesso" type="text"required/>
-            <option value=""></option>
+            <option value="">Selecionar um Perfil...</option>
             <option value="ADM">Administrador</option>
             <option value="USER">Usuário</option>
          </select>
