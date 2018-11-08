@@ -1,12 +1,11 @@
 <div class="container">
         <?php
         // put your code here
-        echo $acronico;
+//        echo $acronico;
         echo "<br>";
 //        echo $completo;
         echo "<p>";
         ?>
-        <h2>Editar cliente</h2>
        
         <?php echo form_open('fornecedor/atualizar'); ?>
         
@@ -15,29 +14,29 @@
             <input type="hidden" name="idforce" id="idcliente" value="<?php echo $fornecedorEditar[0]->idforce; ?>">
             
             
-            <label for="nomeForce">Nome Usuário</label>
-            <input name="nome" type="text" class="col-sm-6 form-control"  id="nomeForce" value="<?php echo $fornecedorEditar[0]->nomeForce; ?>"> 
+            <label for="nomeForce">Nome Usuário:</label>
+            <input name="nome" type="text" class="col-sm-4 form-control"  id="nomeForce" required value="<?php echo $fornecedorEditar[0]->nomeForce; ?>"> 
         </div>
 
         
         <div class="form-group">
-            <label for="contatoForce">Endereço</label>
-            <input class="col-sm-6 form-control" id="contatoForce" name="contatoForce" type="text" value="<?php echo $fornecedorEditar[0]->contatoForce; ?>">
+            <label for="contatoForce">Endereço:</label>
+            <input class="col-sm-4 form-control" id="contatoForce" name="contatoForce" type="text" required value="<?php echo $fornecedorEditar[0]->contatoForce; ?>">
         </div>
         
         <div class="form-group">
-            <label for="numero">Fone</label>
-            <input class="col-sm-6 form-control" id="numero" name="numero" type="text" value="<?php echo $fornecedorEditar[0]->numero; ?>">
+            <label for="numero">Fone:</label>
+            <input class="col-sm-4 form-control" id="numero" name="numero" type="text" required value="<?php echo $fornecedorEditar[0]->numero; ?>">
         </div>
         
         <div class="form-group">
-            <label for="email">Email</label>
-            <input class="col-sm-6 form-control" id="email" name="email" type="text" value="<?php echo $fornecedorEditar[0]->email; ?>">
+            <label for="email">E-mail:</label>
+            <input class="col-sm-4 form-control" id="email" name="email" type="text" required value="<?php echo $fornecedorEditar[0]->email; ?>">
         </div>
         
          <input class="btn btn-success" type="submit" value="Salvar"/>
+         <a class="btn btn-light" href="<?php echo base_url() .  'fornecedor'; ?>">Voltar</a>
         <?php form_close(); ?>
-        <p></p>
-        <a href="<?php echo base_url() .  'fornecedor'; ?>">Cancelar</a>
+        
        
         </div>

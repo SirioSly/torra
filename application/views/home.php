@@ -8,19 +8,19 @@
 //        echo $completo;
     echo "<p>";
     ?>
-    <font style="color:#EAF2F5"><h2>Home</h2>
-    <p></p>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'estoque'; ?>">estoque</a>
-    <p></p>
+    <h2> Home </h2>
     <br>
-    
+    <a class="btn btn-primary" href="<?php echo base_url() . 'estoque'; ?>">estoque</a>
+    <br>
+    <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'usuario'; ?>">usuario</a>
-    <p></p>
+    <br>
     <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'cliente'; ?>">cliente</a>
-<p></p>
+<br>
 <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'estado'; ?>">Cadastro de estado</a>
+<br>
 <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'cidade'; ?>">Cadastro de cidade</a>
     <br>

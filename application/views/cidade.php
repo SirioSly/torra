@@ -4,8 +4,6 @@
 
         <div class="row"></div>
 
-        <div class="col-xs-1 col-sm-1 col-lg-3"></div>
-        <div class="col-xs-10 col-sm-10 col-lg-6">
         <?php
         // put your code here
 //        echo $acronico;
@@ -13,17 +11,14 @@
     //        echo $completo;
         echo "<p>";
         ?>
-            <font style="color:#EAF2F5"><h2>Cadastro de cidade</h2>
         <?php echo form_open('cidade/inserir'); ?>
         <div class="form-group">
-            <label for="nomecidade">Nome da cidade</label>
-            <input name="nomecidade" type="text" class="col-sm-3 col-form-label form-control"  id="nomecidade">
-            
-        
-            
+            <label for="nomecidade">Nome da Cidade:</label>
+            <input name="nomecidade" type="text" class="col-sm-3 form-control"  id="nomecidade" required/>    
+            <br>
             <div class="form-group">
-        <label for="idestado">Estado</label>
-        <select class="form-control" aria-label="ngSelected demo" required="requered"
+        <label for="idestado">Estado:</label>
+        <select class="col-sm-3 form-control" aria-label="ngSelected demo" required="requered"
                 id="idestado" name="idestado" type="name" required/>
         <option>Selecionar Estado... </option>
         <?php foreach ($estado as $estado): ?>
@@ -33,22 +28,24 @@
     </div>
             
      
-        <input class="btn btn-success" type="submit" value="Salvar"/>
-        <input class="btn btn-secondary" type="reset" value="Limpar"/>
+        <input class="btn btn-primary" type="submit" value="Salvar"/>
+        <input class="btn btn-danger" type="reset" value="Limpar"/>
+        <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+        <br>
+        <br>
         <?php form_close(); ?>
-        <p></p>
+  
 
         
         
 
         <table id="contatos" class="table table-striped">
-        <caption>cidades</caption>
 
 
         <thead>
             <tr>
-                <th class="table-dark">Nome cidade</th>
-                <th class="table-dark">UF do estado</th>
+                <th class="table-dark">Nome da Cidade</th>
+                <th class="table-dark">UF do Estado</th>
                 <th class="table-dark">Função</th>
                 
             </tr>

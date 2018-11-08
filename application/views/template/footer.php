@@ -14,7 +14,7 @@
     
 <?php if($this->session->flashdata('sucesso')){ ?>
     <script>
-        $.bootstrapGrowl("Cadastrado realizado com sucesso!", {
+        $.bootstrapGrowl("Cadastro realizado com sucesso!", {
             ele: 'body', // which element to append to
             type: 'success', // (null, 'info', 'error', 'success')
             offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
@@ -41,7 +41,7 @@
     <?php } elseif ($this->session->flashdata('sucessoA')) {
     ?>
      <script>
-        $.bootstrapGrowl("Cadastrado atualizado com sucesso!", {
+        $.bootstrapGrowl("Cadastro atualizado com sucesso!", {
             ele: 'body', // which element to append to
             type: 'success', // (null, 'info', 'error', 'success')
             offset: {from: 'top', amount: 20}, // 'top', or 'bottom'

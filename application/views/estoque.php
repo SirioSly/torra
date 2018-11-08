@@ -1,40 +1,33 @@
 <div class="container">
-    <div class="info"></div>
     
     
         <!responsivo para smartphone, tablet e pc-->
-        <div class="col-xs-1 col-sm-1 col-lg-3"></div>
-        <div class="col-xs-10 col-sm-10 col-lg-6">
-            <div class="test">
 
                 <?php
-                // put your code here
-//                echo $acronico;
                 echo "<br>";
 //        echo $completo;
                 echo "<p>";
                 ?>
-                <font style="color:#000"><h2>Estoque</h2> 
                 <?php echo form_open('estoque/inserir'); ?>
                 <div class="form-group">
-                    <label for="nomeEstoque">Nome do Produto</label>
-                    <input class="form-control" type="text" id="nomeProduto" name="Produto"  required/>
+                    <label for="nomeEstoque">Nome do Produto:</label>
+                    <input class="col-sm-5 form-control" type="text" id="nomeProduto" name="Produto"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="qntEstoque">Quantidade</label>
-                    <input class="form-control" type="text" id="qntEstoque" name="quantidadeEstoque"  required/>
+                    <label for="qntEstoque">Quantidade:</label>
+                    <input class="col-sm-1 form-control" type="text" id="qntEstoque" name="quantidadeEstoque"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="valorVenda">Valor de Venda</label>
-                    <input class="form-control" type="text" id="valorVenda" name="valorVenda"  required/>
+                    <label for="valorVenda">Valor de Venda:</label>
+                    <input class="col-sm-2 form-control" type="text" id="valorVenda" name="valorVenda"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="custo">Custo</label>
-                    <input class="form-control" type="text" id="custo" name="custo"  required/>
+                    <label for="custo">Custo:</label>
+                    <input class="col-sm-2 form-control" type="text" id="custo" name="custo"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="force">Fornecedor</label>
-                    <select class="form-control" required="required" name="idforce" id="idforce"required/>
+                    <label for="force">Fornecedor:</label>
+                    <select class="col-sm-3 form-control" required="required" name="idforce" id="idforce"required/>
                     <option value="" >Selecionar Fornecedor ...</option>
                     <?php foreach ($fornecedor as $fornecedor): ?>
                         <option value="<?php echo $fornecedor->idforce; ?>"><?php echo $fornecedor->nomeForce; ?></option>
@@ -42,16 +35,16 @@
                     </select>
                 </div>    
                 <div class="form-group">
-                    <label for="lote">Lote</label>
-                    <input class="form-control" type="text" id="valorVenda" name="lote"  required/>
+                    <label for="lote">Lote:</label>
+                    <input class="col-sm-2 form-control" type="text" id="valorVenda" name="lote"  required/>
                 </div>    
                 <div class="form-group">
-                    <label for="validade">Validade</label>
-                    <input class="form-control" type="date" id="validade" name="validade"  required/>
+                    <label for="validade">Validade:</label>
+                    <input class="col-sm-2 form-control" type="date" id="validade" name="validade"  required/>
                 </div> 
                 <div class="form-group">
-                    <label for="prodComp">Produto Composto</label>
-                    <input class="form-control" type="text" id="prodComp" name="validade"  required/>
+                    <label for="prodComp">Produto Composto:</label>
+                    <input class="col-sm-4 form-control" type="text" id="prodComp" name="validade"  required/>
                 </div>    
                 <div class="form-group form-check">
                     <input type="checkbox"  class="form-check-input" id="status">
@@ -59,9 +52,10 @@
                 </div> 
 
 
-                <input class="btn btn-success" type="submit" value="Salvar"/>
+                <input class="btn btn-primary" type="submit" value="Salvar"/>
                 <input class="btn btn-danger" type="reset" value="Limpar"/>
-                <input class="btn btn-dark" id="btn-lista" value="Mostrar lista"/>
+                <input class="btn btn-light" id="btn-lista" value="Listar Produtos"/>
+                                <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
 
                 <?php form_close(); ?>
 
@@ -117,7 +111,6 @@
                     </table>
                 </div>
                 <p></p>
-                <a class="btn btn-success" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
 
             </div> 
             <div class="col-xs-1 col-sm-1 col-lg-3"></div>

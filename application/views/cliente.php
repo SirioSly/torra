@@ -55,26 +55,18 @@
     </table>
         </div>
     <p></p>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+    <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
         </div>
     <script type="text/javascript">
-       $(document).ready(function() {
-    $('#example').DataTable();
-} );
-        
-//        $(document).ready(function () {
-//        $('#funcao').DataTable({
-//            language: {
-//                "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-//            },
-//             iDisplayLength: 10,   
-//             dom: 'Bfrtip',
-//    buttons: [
-//        'copy',
-//        'excel',
-//        'print',
-//        'pdf'
-//    ]
-//        });
-//    });
+        $(document).ready(function () {
+        $('#example').DataTable({
+            language: {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+            },
+        });
+    });        
+//        DataTable Anterior
+//       $(document).ready(function() {
+//    $('#example').DataTable({
+//} );
 </script>
