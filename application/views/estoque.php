@@ -63,8 +63,6 @@
             <!--        <table class="table table-striped table-dark"  >-->
                     <!--Datatables-->
                     <table id="estoque" class="table table-striped table-bordered" style="width:100%">
-
-                        <caption>Estoque</caption>
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Produto</th>
