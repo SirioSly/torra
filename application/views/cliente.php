@@ -1,31 +1,31 @@
      
 <div class="container">
     <br>
-       <a class="btn btn-primary" href="<?php echo base_url() . 'clienteNovo'; ?>">Adicionar Cliente</a>
-       <br>
-       <br>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'clienteNovo'; ?>">Adicionar Cliente</a>
+    <br>
+    <br>
 
-<!--<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a> -->
-<br>
-        <p></p>
-        <?php form_close(); ?>
-        <p></p>
+    <!--<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a> -->
+    <br>
+    <p></p>
+    <?php form_close(); ?>
+    <p></p>
 
 
 
-        <div id="div-lista">
+    <div id="div-lista">
         <table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Fone</th>
-                <th>Endereço</th>
-                <th>Função</th>
-                
-            </tr>
-        </thead>
-        <tbody>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Fone</th>
+                    <th>Endereço</th>
+                    <th>Função</th>
+
+                </tr>
+            </thead>
+            <tbody>
                 <?php if ($cliente == FALSE): ?>
                     <tr><td>Nenhum cliente encontrado!</td></tr>
                 <?php else: ?>
@@ -43,28 +43,49 @@
                                 ?>">Editar</a>
                                 |
                                 <a class="btn btn-danger" href="<?php
-                                   echo base_url() . ''
-                                   . 'cliente/excluir/' . $row->idcliente;
-                                   ?>">Excluir</a>
-                        </td>
-                    </tr>
-                    
-        <?php endforeach; ?>
-    <?php endif; ?>
-        </tbody>
-    </table>
-        </div>
+                                echo base_url() . ''
+                                . 'cliente/excluir/' . $row->idcliente;
+                                ?>">Excluir</a>
+                                |
+                                <?php
+                                if ($row->status == 1) {
+                                    ?>
+                                    <a class="btn btn-danger btn-sm" role="button" href="<?php echo base_url() . 'cliente/desativar/' . $row->idcliente; ?>">
+                                        <div class="mdl-tooltip" data-mdl-for="<?php echo $row->idcliente . "desativar"; ?>">
+                                            Desativar?
+                                        </div>
+                                    </a> 
+                                    <?php
+                                } else {
+                                    ?>
+                                    <a class="btn btn-success btn-sm" role="button" href="<?php echo base_url() . 'cliente/ativar/' . $row->idcliente; ?>">
+                                        <div class="mdl-tooltip" data-mdl-for="<?php echo $row->idcliente . "ativar"; ?>">
+                                            Ativar
+                                        </div>
+                                    </a> 
+                                    <?php
+                                }
+                                ?>
+
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
     <p></p>
     <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
-        </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
         $('#example').DataTable({
             language: {
                 "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
             },
         });
-    });        
+    });
 //        DataTable Anterior
 //       $(document).ready(function() {
 //    $('#example').DataTable({

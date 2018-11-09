@@ -23,6 +23,23 @@ class Cliente extends CI_Controller {
         $this->load->view('cliente', $dados);
         $this->load->view('template/footer');
     }
+    
+    public function ativar($idcliente) {
+        $result = $this->cliente->ativar($idcliente);
+        if ($result == true) {
+            redirect('cliente');
+        } else {
+            redirect('cliente');
+        }
+    }
+    public function desativar($idcliente) {
+        $result = $this->cliente->desativar($idcliente);
+        if ($result == true) {
+            redirect('cliente');
+        } else {
+            redirect('cliente');
+        }
+    }
 
     public function excluir($id) {
         $result = $this->cliente->deletar($id);
