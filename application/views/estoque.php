@@ -51,7 +51,7 @@
                     <input class="col-sm-2 form-control" type="text" id="valorVenda" name="lote"  required/>
                 </div>
 
-
+<!--oi-->
                 <input class="btn btn-primary" type="submit" value="Salvar"/>
                 <input class="btn btn-danger" type="reset" value="Limpar"/>
                 <input class="btn btn-primary" id="btn-lista" value="Listar Produtos"/>
