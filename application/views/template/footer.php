@@ -100,8 +100,7 @@
     </script>
 
 <?php } ?>
-    
+</div>
     </body>
 </html>
 
-</div>

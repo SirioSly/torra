@@ -14,6 +14,18 @@ class Usuario_model extends CI_Model{
     return $query->result();
     }
     
+    function ativar($idusuario) {
+        $this->db->where('idusuario', $idusuario);
+        $this->db->set('status', 1);
+        return $this->db->update('usuario');
+    }
+    
+    function desativar($idusuario) {
+        $this->db->where('idusuario', $idusuario);
+        $this->db->set('status', 0);
+        return $this->db->update('usuario');
+    }
+    
     function inserir($c){
         return $this->db->insert('usuario',$c);
     }

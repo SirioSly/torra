@@ -58,6 +58,22 @@ class Usuario extends CI_Controller {
         $this->load->view('template/footer');
         
     }
+    public function ativar($idusuario) {
+        $result = $this->usuario->ativar($idusuario);
+        if ($result == true) {
+            redirect('usuario');
+        } else {
+            redirect('usuario');
+        }
+    }
+    public function desativar($idusuario) {
+        $result = $this->usuario->desativar($idusuario);
+        if ($result == true) {
+            redirect('usuario');
+        } else {
+            redirect('usuario');
+        }
+    }
 
    public function atualizar(){
         $data['idusuario'] = $this->input->post('idusuario');

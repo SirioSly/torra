@@ -34,5 +34,23 @@ class Cidade_model extends CI_Model{
         return $this->db->update('cidade');
     }
     
+     function listarCidadeEstado($estado_idestado) {
+        return $this->db->select('*')
+                        ->from('cidade')
+                        ->join('estado', 'cidade.idestado = estado.idestado')
+                        ->where(array('estado.idestado' => $estado_idestado))
+                        ->order_by('nomeCidade', 'ASC')
+                        ->get()->result();
+    }
+    
+    
+    public function selectCidade($estado_idestado = null) {
+        $cidades = $this->listarCidadeEstado($estado_idestado);
+        $options = "<option></option>";
+        foreach ($cidades as $c) {
+            $options .= "<option value = '{$c->idcidade}'>$c->nomeCidade</option>" . PHP_EOL;
+        }
+        return $options;
+    }
 }
 
