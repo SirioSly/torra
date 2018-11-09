@@ -34,7 +34,7 @@
                     <input class="col-sm-12 form-control" type="date" id="validade" name="validade"  required/>
                 </div>
             </div>
-        <div class="form-row">        
+        <div class="form-row">            
         <div class="form-group col-md-3">
                     <label for="force">Fornecedor<h11>*</h11></label>
                     <select class="col-sm-11 form-control" required="required" name="idforce" id="idforce"required/>
