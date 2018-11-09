@@ -61,7 +61,7 @@
         <label for="idcidade">Cidade<h11>*</h11></label>
         <select class="col-sm-4 form-control" aria-label="ngSelected demo" required="requered"
                 id="idcidade" name="idcidade" type="name" required/>
-        <option>Selecionar Estado... </option>
+        <option>Selecionar Cidade... </option>
         <?php foreach ($cidade as $cidade): ?>
             <option value="<?php echo $cidade->idcidade; ?>"><?php echo $cidade->nomeCidade; ?></option>
         <?php endforeach; ?>        
@@ -88,3 +88,24 @@
         <input class="btn btn-success" type="submit" value="Salvar"/>
         <input class="btn btn-danger" type="reset" value="Limpar"/>
         <a class="btn btn-light" href="<?php echo base_url() . 'cliente'; ?>">Voltar</a>
+
+        <?php                form_close();?>
+        
+    </div>
+        <script type="text/javascript">
+            
+            var base_url = "<?php echo base_url() ?>";
+    $(function () {
+        $('#idestado').change(function () {
+            var idestado = $('#idestado').val();
+            $.post(base_url + 'index.php/ajax/Cidade/listarCidadeEstado', {
+                estado_idestado: idestado
+            }, function (data) {
+                $('#idcidade').html(data);
+                $('#idcidade').removeAttr('disabled');
+            });
+        });
+    });
+    
+</script>
+
