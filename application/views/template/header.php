@@ -69,7 +69,7 @@ and open the template in the editor.
                                         <a class="dropdown-item" href="<?php echo base_url() . 'cidade'; ?>">Cidade</a>
                                         <a class="dropdown-item" href="<?php echo base_url() . 'estado'; ?>">Estado</a>
                                          <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?php echo base_url() . 'estoque'; ?>">Estoque</a>
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'estoqueNovo'; ?>">Estoque</a>
                                         
                              
                                 </div>
