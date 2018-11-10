@@ -10,7 +10,7 @@
     ?>
     <h2> Home </h2>
     <br>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'estoque'; ?>">estoque</a>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'estoqueNovo'; ?>">estoque</a>
     <br>
     <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'usuario'; ?>">usuario</a>
