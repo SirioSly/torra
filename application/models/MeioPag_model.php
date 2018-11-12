@@ -17,6 +17,20 @@ class MeioPag_model extends CI_Model{
     function inserir($c){
         return $this->db->insert('meioPag',$c);
     }
+    
+    function ativar($idmeioPag) {
+        $this->db->where('idmeioPag', $idmeioPag);
+        $this->db->set('status', 1);
+        return $this->db->update('meioPag');
+    }
+    
+    function desativar($idmeioPag) {
+        $this->db->where('idmeioPag', $idmeioPag);
+        $this->db->set('status', 0);
+        return $this->db->update('meioPag');
+    }
+    
+    
     function deletar($id){
         $this->db->where('idmeioPag',$id);
         return $this->db->delete('meioPag');

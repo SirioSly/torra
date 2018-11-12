@@ -73,7 +73,6 @@
                     <th scope="col">Fornecedor</th>
                     <th scope="col">Lote</th>
                     <th scope="col">Validade</th>
-
                     <th scope="col">Função</th>
                 </tr>
 
@@ -101,7 +100,26 @@
                                 <a class="btn btn-success" href="<?php echo base_url() . 'estoque/editar/' . $row->idestoque; ?>">Editar</a>
                                 | 
                                 <a class="btn btn-danger" href="<?php echo base_url() . 'estoque/excluir/' . $row->idestoque; ?>">Excluir</a>
-
+                                |
+                                <?php
+                                if ($row->status == 1) {
+                                    ?>
+                                    <a class="btn btn-danger btn-sm" role="button" href="<?php echo base_url() . 'estoque/desativar/' . $row->idestoque; ?>">
+                                        <div class="mdl-tooltip" data-mdl-for="<?php echo $row->idestoque . "desativar"; ?>">
+                                            Desativar?
+                                        </div>
+                                    </a> 
+                                    <?php
+                                } else {
+                                    ?>
+                                    <a class="btn btn-success btn-sm" role="button" href="<?php echo base_url() . 'estoque/ativar/' . $row->idestoque; ?>">
+                                        <div class="mdl-tooltip" data-mdl-for="<?php echo $row->idestoque . "ativar"; ?>">
+                                            Ativar
+                                        </div>
+                                    </a> 
+                                    <?php
+                                }
+                                ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

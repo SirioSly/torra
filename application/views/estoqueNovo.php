@@ -1,6 +1,7 @@
 <div class="container">
     <br>
        <a class="btn btn-primary" href="<?php echo base_url() . 'estoque'; ?>">Adicionar Produto</a>
+       <a class="btn btn-primary" href="<?php echo base_url() . 'categoria'; ?>">Adicionar Categoria</a>
        <br>
        <br>
 

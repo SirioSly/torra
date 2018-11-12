@@ -33,6 +33,23 @@ class MeioPag extends CI_Controller {
             redirect('meioPag');
         }
     }
+    
+    public function ativar($idmeioPag) {
+        $result = $this->meioPag->ativar($idmeioPag);
+        if ($result == true) {
+            redirect('meioPag');
+        } else {
+            redirect('meioPag');
+        }
+    }
+    public function desativar($idmeioPag) {
+        $result = $this->meioPag->desativar($idmeioPag);
+        if ($result == true) {
+            redirect('meioPag');
+        } else {
+            redirect('meioPag');
+        }
+    }
 
         public function excluir($id){
          $result = $this->meioPag->deletar($id);

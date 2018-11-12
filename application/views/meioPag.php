@@ -38,6 +38,26 @@
                                         echo base_url() . ''
                                         . 'meioPag/excluir/' . $row->idmeioPag;
                                         ?>">Excluir</a>
+                                        |
+                                <?php
+                                if ($row->status == 1) {
+                                    ?>
+                                    <a class="btn btn-danger btn-sm" role="button" href="<?php echo base_url() . 'meioPag/desativar/' . $row->idmeioPag; ?>">
+                                        <div class="mdl-tooltip" data-mdl-for="<?php echo $row->idmeioPag . "desativar"; ?>">
+                                            Desativar?
+                                        </div>
+                                    </a> 
+                                    <?php
+                                } else {
+                                    ?>
+                                    <a class="btn btn-success btn-sm" role="button" href="<?php echo base_url() . 'meioPag/ativar/' . $row->idmeioPag; ?>">
+                                        <div class="mdl-tooltip" data-mdl-for="<?php echo $row->idmeioPag . "ativar"; ?>">
+                                            Ativar
+                                        </div>
+                                    </a> 
+                                    <?php
+                                }
+                                ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

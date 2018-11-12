@@ -47,7 +47,26 @@ class Estoque extends CI_Controller {
         
        
     }
-
+    
+    
+public function ativar($idestoque) {
+        $result = $this->estoque->ativar($idestoque);
+        if ($result == true) {
+            redirect('estoque');
+        } else {
+            redirect('estoque');
+        }
+    }
+    public function desativar($idestoque) {
+        $result = $this->estoque->desativar($idestoque);
+        if ($result == true) {
+            redirect('estoque');
+        } else {
+            redirect('estoque');
+        }
+    }
+    
+    
     public function excluir($idestoque) {
         $result = $this->estoque->deletar($idestoque);
         if ($result == TRUE){
