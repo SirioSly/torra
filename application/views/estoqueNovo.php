@@ -39,7 +39,7 @@
                                         <td><?php echo $row->qntEstoque; ?></td>
                                         <td><?php echo $row->valorVenda; ?></td>
                                         <td><?php echo $row->custo; ?></td>
-                                        <td><?php echo $row->idforce; ?></td>
+                                        <td><?php echo $row->nomeForce; ?></td>
                                         <td><?php echo $row->valorVenda; ?></td>
                                         <td><?php echo $row->validade; ?></td>
                             <td>
