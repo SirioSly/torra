@@ -17,8 +17,8 @@ class Estoque_model extends CI_Model{
         $query=$this->db->get();
     return $query->result();
     }    
-    function inserir($e){
-        return $this->db->insert('estoque',$e);
+    function inserir(){
+        return $this->db->insert('estoque');
     }
     function deletar($idestoque){
         $this->db->where('idestoque',$idestoque);
@@ -36,12 +36,12 @@ class Estoque_model extends CI_Model{
         return $this->db->update('estoque');
     }
     function editar($idestoque){
-        $this->db->where('$idestoque',$$idestoque);
-        $result = $this->db->get('$estoque');
+        $this->db->where('idestoque',$idestoque);
+        $result = $this->db->get('estoque');
         return $result->result();
     }    
     function atualizar($data){
-        $this->db->where('$idestoque',$data['$idestoque']);
+        $this->db->where('idestoque',$data['idestoque']);
         $this->db->set($data);
         return $this->db->update('estoque');
     }
