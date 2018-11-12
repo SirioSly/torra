@@ -26,18 +26,17 @@ class Estoque extends CI_Controller {
         $this->load->view('template/footer');
     }
 
-    public function inserir($e) {
-        $data['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
-        $data['qnt'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
-        $data['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
-        $data['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
-        $data['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
-        $data['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
-        $data['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
-        $data['prodComp'] = mb_convert_case ($this->input->post('prodComp'), MB_CASE_UPPER);
-        $data['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
+    public function inserir() {
+        $dados['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
+        $dados['qntEstoque'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
+        $dados['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
+        $dados['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
+        $dados['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
+        $dados['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
+        $dados['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
+        $dados['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
                                  
-         $result = $this->estoque->inserir($data);
+         $result = $this->estoque->inserir($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucesso', 'msg');
              redirect('estoque');
@@ -64,21 +63,21 @@ class Estoque extends CI_Controller {
         $this->load->view('template/header');
         $dados['acronico'] = "LTT";
         $dados['completo'] = "Lojao Torra Torra";
-        $data['estoqueEditar'] = $this->estoque->editar($idestoque);
-        $this->load->view('estoqueEditar', $data);
+        $dados['estoqueEditar'] = $this->estoque->editar($idestoque);
+        $this->load->view('estoqueEditar', $dados);
         $this->load->view('template/footer');
               
         }
 
-   public function atualizar($data){
-        $data['idestoque'] = $this->input->post('idestoque');            
-        $data['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
-        $data['qnt'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
-        $data['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
-        $data['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
-        $data['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
-        $data['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);          
-        $result = $this->estoque->atualizar($data);
+   public function atualizar($dados){
+        $dados['idestoque'] = $this->input->post('idestoque');            
+        $dados['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
+        $dados['qnt'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
+        $dados['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
+        $dados['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
+        $dados['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
+        $dados['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);          
+        $result = $this->estoque->atualizar($dados);
         if ($result == TRUE){
             $this->estoque->set_flashdata('sucessoA', 'msg');
              redirect('estoque');
