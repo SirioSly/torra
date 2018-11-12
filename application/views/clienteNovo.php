@@ -16,13 +16,13 @@
         <?php echo form_open('clienteNovo/inserir'); ?>
         <div class="col">
             <div class="form-group">
-                <label for="endereco">Nome Usuário:<h11>*</h11></label>
-                <input type="text" class="form-control" >
+                <label for="nome">Nome do Cliente<h11>*</h11></label>
+                <input type="text" class="form-control" id="nome" name="nome" required/> 
             </div>
 
             <div class="form-row">
                 <div class="col">
-                    <label for="endereco">CPF:<h11>*</h11></label>
+                    <label for="cpf">CPF<h11>*</h11></label>
                     <input class="form-control" id="cpf" name="cpf" type="text" placeholder="Apenas números" maxlength="11" required/>
                 </div>
 
@@ -68,7 +68,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="endereco">Endereço:<h11>*</h11></label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="endereco" name="endereco" required/>
                         </div>
                     </div>
                 </div>

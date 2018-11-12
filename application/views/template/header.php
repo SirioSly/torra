@@ -43,7 +43,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php // if ($this->session->userdata('estou_logado')) { ?>
-            <div class="container">
+            <div class="container">             
                 <nav class="navbar navbar-expand-lg  navbar-white bg-white">
                     <a class="navbar-brand" href="<?php echo base_url() . 'home' ?>"> Lojão Torra-Torra</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +92,7 @@ and open the template in the editor.
                         
                     <?php } ?>
                 </nav>
-          
+                </div>
             
            
       
