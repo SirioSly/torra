@@ -34,7 +34,7 @@
                     <?php foreach ($estoque as $row): ?>
 
                         <tr>
-                            <td><?php echo $row->nomeEstoque; ?></td>
+                                        <td><?php echo $row->nomeEstoque; ?></td>
                                         <td><?php echo $row->qntEstoque; ?></td>
                                         <td><?php echo $row->valorVenda; ?></td>
                                         <td><?php echo $row->custo; ?></td>

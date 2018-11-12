@@ -55,7 +55,7 @@
     <input class="btn btn-primary" type="submit" value="Salvar"/>
     <input class="btn btn-danger" type="reset" value="Limpar"/>
 <!--                <input class="btn btn-primary" id="btn-lista" value="Listar Produtos"/>-->
-    <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+    <a class="btn btn-light" href="<?php echo base_url() . 'estoqueNovo'; ?>">Voltar</a>
 
 
     <?php form_close(); ?>
