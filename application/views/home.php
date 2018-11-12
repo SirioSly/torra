@@ -24,6 +24,9 @@
 <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'cidade'; ?>">Cadastro de cidade</a>
     <br>
+<br>
+    <a class="btn btn-primary" href="<?php echo base_url() . 'meioPag'; ?>">Cadastro de meio de pagamento</a>
+    <br>
     
 </div>
  
