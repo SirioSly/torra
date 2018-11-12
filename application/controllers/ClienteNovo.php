@@ -9,9 +9,7 @@ class ClienteNovo extends CI_Controller {
         $this->load->model('ClienteNovo_model', 'cliente');
         $this->load->model('Estado_model', 'estado');
         $this->load->model('Cidade_model', 'cidade');
-        
     }
-    
 
     public function index() {
         $this->load->view('template/header');
@@ -24,33 +22,29 @@ class ClienteNovo extends CI_Controller {
         $this->load->view('template/footer');
     }
 
-public function inserir() {
-        $data['nome'] = mb_convert_case ($this->input->post('nome'), MB_CASE_UPPER);
-        $data['endereco'] = mb_convert_case ($this->input->post('endereco'), MB_CASE_UPPER);
-        $data['fone'] = mb_convert_case ($this->input->post('fone'), MB_CASE_UPPER);
-        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
-        $data['cnpj'] = mb_convert_case ($this->input->post('cnpj'), MB_CASE_UPPER);
-        $data['cpf'] = mb_convert_case ($this->input->post('cpf'), MB_CASE_UPPER);
-        $data['idcidade'] = mb_convert_case ($this->input->post('idcidade'), MB_CASE_UPPER);
-        $data['contato'] = mb_convert_case ($this->input->post('contato'), MB_CASE_UPPER);
-        $data['ultimaCompra'] = mb_convert_case ($this->input->post('ultimaCompra'), MB_CASE_UPPER);
-        $data['dataAniver'] = mb_convert_case ($this->input->post('dataAniver'), MB_CASE_UPPER);
-        $data['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
-        
-        
-         $result = $this->cliente->inserir($data);
-        if ($result == TRUE){
+    public function inserir() {
+        $data['nome'] = mb_convert_case($this->input->post('nome'), MB_CASE_UPPER);
+        $data['endereco'] = mb_convert_case($this->input->post('endereco'), MB_CASE_UPPER);
+        $data['fone'] = $this->input->post('fone');
+        $data['email'] = mb_convert_case($this->input->post('email'), MB_CASE_UPPER);
+        $data['cnpj'] = $this->input->post('cnpj');
+        $data['cpf'] = $this->input->post('cpf');
+        $data['idcidade'] = $this->input->post('idcidade');
+        $data['contato'] = mb_convert_case($this->input->post('contato'), MB_CASE_UPPER);
+//        $data['ultimaCompra'] = mb_convert_case ($this->input->post('ultimaCompra'), MB_CASE_UPPER);
+        $data['dataAniver'] = $this->input->post('dataAniver');
+//        $data['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
+
+
+        $result = $this->cliente->inserir($data);
+        if ($result == TRUE) {
             $this->session->set_flashdata('sucesso', 'msg');
-             redirect('cliente');
-        } else{
+            redirect('cliente');
+        } else {
             $this->session->set_flashdata('falha', 'msg');
             redirect('cliente');
         }
-        
-       
     }
-
-    
 
     function editar($id) {
         $this->load->view('template/header');
@@ -61,31 +55,31 @@ public function inserir() {
         $data['cidade'] = $this->cidade->listar();
         $this->load->view('clienteEditar', $data);
         $this->load->view('template/footer');
-        
     }
 
-   public function atualizar(){
+    public function atualizar() {
         $data['idcliente'] = $this->input->post('idcliente');
-        $data['nome'] = mb_convert_case ($this->input->post('nome'), MB_CASE_UPPER);
-        $data['endereco'] = mb_convert_case ($this->input->post('endereco'), MB_CASE_UPPER);
-        $data['fone'] = mb_convert_case ($this->input->post('fone'), MB_CASE_UPPER);
-        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
-        $data['cnpj'] = mb_convert_case ($this->input->post('cnpj'), MB_CASE_UPPER);
-        $data['cpf'] = mb_convert_case ($this->input->post('cpf'), MB_CASE_UPPER);
-        $data['idcidade'] = mb_convert_case ($this->input->post('idcidade'), MB_CASE_UPPER);
-        $data['contato'] = mb_convert_case ($this->input->post('contato'), MB_CASE_UPPER);
-        $data['ultimaCompra'] = mb_convert_case ($this->input->post('ultimaCompra'), MB_CASE_UPPER);
-        $data['dataAniver'] = mb_convert_case ($this->input->post('dataAniver'), MB_CASE_UPPER);
-        $data['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
-       
-        
+        $data['nome'] = mb_convert_case($this->input->post('nome'), MB_CASE_UPPER);
+        $data['endereco'] = mb_convert_case($this->input->post('endereco'), MB_CASE_UPPER);
+        $data['fone'] = $this->input->post('fone');
+        $data['email'] = mb_convert_case($this->input->post('email'), MB_CASE_UPPER);
+        $data['cnpj'] = $this->input->post('cnpj');
+        $data['cpf'] = $this->input->post('cpf');
+        $data['idcidade'] = mb_convert_case($this->input->post('idcidade'), MB_CASE_UPPER);
+        $data['contato'] = mb_convert_case($this->input->post('contato'), MB_CASE_UPPER);
+//      $data['ultimaCompra'] = mb_convert_case($this->input->post('ultimaCompra'), MB_CASE_UPPER);
+        $data['dataAniver'] = mb_convert_case($this->input->post('dataAniver'), MB_CASE_UPPER);
+//      $data['status'] = mb_convert_case($this->input->post('status'), MB_CASE_UPPER);
+
+
         $result = $this->cliente->atualizar($data);
-        if ($result == TRUE){
+        if ($result == TRUE) {
             $this->session->set_flashdata('sucessoA', 'msg');
-             redirect('cliente');
-        } else{
+            redirect('cliente');
+        } else {
             $this->session->set_flashdata('falhaA', 'msg');
             redirect('cleinte');
         }
     }
-  }
+
+}
