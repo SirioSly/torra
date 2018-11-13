@@ -11,7 +11,7 @@ and open the template in the editor.
         <div class="col-xs-1 col-sm-1 col-lg-3"></div>
       <div class="col-xs-10 col-sm-10 col-lg-6"></div>
 
-        <title>Meu Projeto Framework</title>
+        <title>Lojão torra torra</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="shortcut icon" href="<?php // echo base_url('imagens/faviconComFundo.png');               ?>">
         <!--Bootstrap-->
@@ -32,9 +32,9 @@ and open the template in the editor.
        
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--	<link rel="stylesheet" type="text/css" href="css/usuariomain.css">-->
-	<link rel="stylesheet" type="text/css" href="css/usuarioutil.css"><!--
-        <script src="js/userjs.js"></script>-->
+	<!--<link rel="stylesheet" type="text/css" href="css/usuariomain.css">-->
+	<link rel="stylesheet" type="text/css" href="css/usuarioutil.css">
+<!--        <script src="js/userjs.js"></script>-->
 
         
 
@@ -45,7 +45,7 @@ and open the template in the editor.
     <body>
         <?php // if ($this->session->userdata('estou_logado')) { ?>
             <div class="container">             
-                <nav class="navbar navbar-expand-lg  navbar-white bg-white">
+                <nav class="navbar navbar-expand-lg  navbar-light bg-light">
                     <a class="navbar-brand" href="<?php echo base_url() . 'home' ?>"> Lojão Torra-Torra</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
