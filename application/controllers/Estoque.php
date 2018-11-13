@@ -30,13 +30,13 @@ class Estoque extends CI_Controller {
 
     public function inserir() {
         $dados['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
-        $dados['idCategoria'] = mb_convert_case ($this->input->post('idCategoria'), MB_CASE_UPPER);
-        $dados['qntEstoque'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
-        $dados['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
-        $dados['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
-        $dados['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
+        $dados['idCategoria'] = $this->input->post('idCategoria');
+        $dados['qntEstoque'] = $this->input->post('qntEstoque');
+        $dados['valorVenda'] = $this->input->post('valorVenda');
+        $dados['custo'] = $this->input->post('custo');
+        $dados['idforce'] = $this->input->post('idforce');
         $dados['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
-        $dados['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
+        $dados['validade'] = $this->input->post('validade');
         $dados['status'] = true;
                                  
          $result = $this->estoque->inserir($dados);
@@ -96,15 +96,14 @@ public function ativar($idestoque) {
    public function atualizar(){
         $dados['idestoque'] = $this->input->post('idestoque');            
         $dados['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
-        $dados['idCategoria'] = mb_convert_case ($this->input->post('idCategoria'), MB_CASE_UPPER);
-        $dados['qntEstoque'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
-        $dados['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
-        $dados['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
-        $dados['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
+        $dados['idCategoria'] = $this->input->post('idCategoria');
+        $dados['qntEstoque'] = $this->input->post('qntEstoque');
+        $dados['valorVenda'] = $this->input->post('valorVenda');
+        $dados['custo'] = $this->input->post('custo');
+        $dados['idforce'] = $this->input->post('idforce');
         $dados['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
-        $dados['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
-        $dados['status'] = true;          
-       
+        $dados['validade'] = $this->input->post('validade');
+       $result = $this->estoque->atualizar($dados);
             redirect('estoqueNovo');
         }
     }
