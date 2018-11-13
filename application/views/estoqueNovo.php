@@ -18,13 +18,16 @@
         <thead>
             <tr>
                 <th>Produto</th>
+                <th>Categoria</th>
                 <th>Quantidade</th>
                 <th>Valor de Venda</th>
                 <th>Custo</th>
                 <th>Fornecedor</th>
                 <th>Lote</th>
                 <th>Validade</th>
+                <th>status</th>
                 <th>Função</th>
+                
                 
             </tr>
         </thead>
@@ -36,12 +39,14 @@
 
                         <tr>
                                         <td><?php echo $row->nomeEstoque; ?></td>
+                                        <td><?php echo $row->nomeCategoria; ?></td>
                                         <td><?php echo $row->qntEstoque; ?></td>
                                         <td><?php echo $row->valorVenda; ?></td>
                                         <td><?php echo $row->custo; ?></td>
                                         <td><?php echo $row->nomeForce; ?></td>
                                         <td><?php echo $row->valorVenda; ?></td>
                                         <td><?php echo $row->validade; ?></td>
+                                        <td><?php echo $row->status; ?></td>
                             <td>
                                 <a class="btn btn-success" href="<?php
                                 echo base_url() .
@@ -53,7 +58,7 @@
                                    . 'estoque/excluir/' . $row->idestoque;
                                    ?>">Excluir</a>
                                 <?php
-                                if ($row->status == 1) {
+                                if ($row->status == true) {
                                     ?>
                                     <a class="btn btn-danger btn-sm" role="button" href="<?php echo base_url() . 'estoque/desativar/' . $row->idestoque; ?>">
                                         <div class="mdl-tooltip" data-mdl-for="<?php echo $row->idestoque . "desativar"; ?>">

@@ -44,7 +44,17 @@
             <?php endforeach; ?>        
             </select>
         </div>    
-
+    </div>
+        <div class="form-row">            
+        <div class="form-group col-md-3">
+            <label for="categoria">Categoria<h11>*</h11></label>
+            <select class="col-sm-11 form-control" required="required" name="idCategoria" id="idCategoria"required/>
+            <option value="" >Selecionar Categoria ...</option>
+            <?php foreach ($categoria as $categoria): ?>
+                <option value="<?php echo $categoria->idCategoria; ?>"><?php echo $categoria->nomeCategoria; ?></option>
+            <?php endforeach; ?>        
+            </select>
+        </div>    
     </div>
     <div class="form-group">
         <label for="lote">Lote<h11>*</h11></label>

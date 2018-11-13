@@ -8,6 +8,7 @@ class Estoque extends CI_Controller {
         parent::__construct();
         $this->load->model('Estoque_model', 'estoque');
         $this->load->model('Fornecedor_model', 'fornecedor');
+        $this->load->model('Categoria_model', 'categoria');
 //        if(!$this->session->userdata('estou_logado')){
 //            redirect('login');
 //        } else if($this->session->userdata('logado')->perfilAcesso == 'USER'){
@@ -21,6 +22,7 @@ class Estoque extends CI_Controller {
         $dados['completo'] = "Lojao Torra Torra";
         $dados['estoque'] = $this->estoque->listar();
         $dados['fornecedor'] = $this->fornecedor->listar();
+        $dados['categoria'] = $this->categoria->listar();
 //        $this->db->join('fornecedor','fornecedor.idforce = estoque.idestoque');
         $this->load->view('estoque', $dados);
         $this->load->view('template/footer');
@@ -28,13 +30,14 @@ class Estoque extends CI_Controller {
 
     public function inserir() {
         $dados['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
+        $dados['idCategoria'] = mb_convert_case ($this->input->post('idCategoria'), MB_CASE_UPPER);
         $dados['qntEstoque'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
         $dados['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
         $dados['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
         $dados['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
         $dados['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
         $dados['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
-        $dados['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);
+        $dados['status'] = true;
                                  
          $result = $this->estoque->inserir($dados);
         if ($result == TRUE){
@@ -52,17 +55,17 @@ class Estoque extends CI_Controller {
 public function ativar($idestoque) {
         $result = $this->estoque->ativar($idestoque);
         if ($result == true) {
-            redirect('estoque');
+            redirect('estoqueNovo');
         } else {
-            redirect('estoque');
+            redirect('estoqueNovo');
         }
     }
     public function desativar($idestoque) {
         $result = $this->estoque->desativar($idestoque);
         if ($result == true) {
-            redirect('estoque');
+            redirect('estoqueNovo');
         } else {
-            redirect('estoque');
+            redirect('estoqueNovo');
         }
     }
     
@@ -84,6 +87,7 @@ public function ativar($idestoque) {
         $dados['completo'] = "Lojao Torra Torra";
         $dados['estoqueEditar'] = $this->estoque->editar($idestoque);
         $dados['fornecedor'] = $this->fornecedor->listar();
+        $dados['categoria'] = $this->categoria->listar();
         $this->load->view('estoqueEditar', $dados);
         $this->load->view('template/footer');
               
@@ -92,14 +96,15 @@ public function ativar($idestoque) {
    public function atualizar(){
         $dados['idestoque'] = $this->input->post('idestoque');            
         $dados['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
+        $dados['nomeCategoria'] = mb_convert_case ($this->input->post('nomeCategoria'), MB_CASE_UPPER);
         $dados['qntEstoque'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
         $dados['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
         $dados['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
         $dados['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
         $dados['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
-        $dados['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);          
+        $dados['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);          
        
-            redirect('estoque');
+            redirect('estoqueNovo');
         }
     }
   

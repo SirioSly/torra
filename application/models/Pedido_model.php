@@ -34,6 +34,6 @@ class Pedido_model extends CI_Model{
         $this->db->set($data);
         return $this->db->update('pedido');
     }
-    
+
 }
 

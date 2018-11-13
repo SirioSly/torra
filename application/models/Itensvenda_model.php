@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class EstoqueNovo_model extends CI_Model{
+class Itensvenda_model extends CI_Model{
     function __construct(){
         parent::__construct();
     }
@@ -10,26 +10,30 @@ class EstoqueNovo_model extends CI_Model{
     function listar(){
         $this->db->select('*');
         $this->db->from('estoque');
-        $this->db->order_by('nomeEstoque','ASC');
         $this->db->join('fornecedor','fornecedor.idforce = estoque.idforce');
         $this->db->join('categoria','categoria.idCategoria = estoque.idCategoria');
         $this->db->order_by('nomeEstoque','ASC');
         $query=$this->db->get();
     return $query->result();
     }
+    
+    function inserir($c){
+        return $this->db->insert('itensveda',$c);
+    }
     function deletar($id){
-        $this->db->where('idestoque',$id);
-        return $this->db->delete('estoqueNovo');
+        $this->db->where('itensvenda',$id);
+        return $this->db->delete('itensvenda');
     }
-        function desativar($idcliente) {
-        $this->db->where('idestoque', $idcliente);
-        $this->db->set('status', 0);
-        return $this->db->update('estoque');
-    }
-    function editar($idestoque){
-        $this->db->where('idestoque',$idestoque);
-        $result = $this->db->get('estoque');
+    function editar($id){
+        $this->db->where('iditensvenda',$id);
+        $result = $this->db->get('itensvenda');
         return $result->result();
     }
-     
+    function atualizar($data){
+        $this->db->where('iditensvenda',$data['iditensvenda']);
+        $this->db->set($data);
+        return $this->db->update('itensvenda');
+    }
+
 }
+

@@ -2,15 +2,14 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pedido extends CI_Controller {
+class Itensvenda extends CI_Controller {
 
     function __construct() {
         parent::__construct();
         
+        $this->load->model('Itensvenda_model','itensvenda'); 
         $this->load->model('Pedido_model','pedido'); 
-        $this->load->model('Cliente_model','cliente'); 
-        $this->load->model('Usuario_model','usuario'); 
-        $this->load->model('MeioPag_model','meioPag'); 
+        $this->load->model('Estoque_model','estoque'); 
       
         //contatos é um alias para o Contatos_model 
     }
@@ -19,39 +18,37 @@ class Pedido extends CI_Controller {
         $this->load->view('template/header');
         $dados['acronico'] = "MPF";
         $dados['completo'] = "Meu Projeto Framework";
+        $dados['itensvenda'] = $this->itensvenda->listar();
         $dados['pedido'] = $this->pedido->listar();
-        $dados['cliente'] = $this->cliente->listar();
-        $dados['usuario'] = $this->usuario->listar();
-        $dados['meioPag'] = $this->meioPag->listar();
-        $this->load->view('pedido', $dados);
+        $dados['estoque'] = $this->estoque->listar();
+        $this->load->view('itensvenda', $dados);
         $this->load->view('template/footer');
     }
     
     public function inserir(){
-        $dados['idcliente'] = $this->input->post('idcliente');
-        $dados['idusuario'] = $this->session->userdata('logado')-> idusuario;
-        $dados['idmeioPag'] = $this->input->post('idmeioPag');
-        $dados['status'] = 'andamento';
+        $dados['idpedido'] = $this->input->post('idpedido');
+        $dados['idestoque'] = $this->input->post('idestoque');
+        $dados['qntProduto'] = $this->input->post('qntProduto');
+        $dados['status'] = $this->input->post('status');
         
-        
-        $result = $this->pedido->inserir($dados);
+        $result = $this->itensvenda->inserir($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucesso', 'msg');
              redirect('itensvenda');
         } else{
             $this->session->set_flashdata('falha', 'msg');
-            redirect('pedido');
+            redirect('itensvenda');
         }
     }
 
         public function excluir($id){
-         $result = $this->cidade->deletar($id);
+         $result = $this->itensvenda->deletar($id);
         if ($result == TRUE){
             $this->session->set_flashdata('excluirS', 'msg');
-             redirect('cidade');
+             redirect('itensvenda');
         } else{
             $this->session->set_flashdata('excluirF', 'msg');
-            redirect('cidade');
+            redirect('itensvenda');
         }
         
     }

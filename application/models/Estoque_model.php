@@ -13,12 +13,13 @@ class Estoque_model extends CI_Model{
         $this->db->from('estoque');
         $this->db->order_by('nomeEstoque','ASC');
         $this->db->join('fornecedor','fornecedor.idforce = estoque.idforce');
+        $this->db->join('categoria','categoria.idCategoria = estoque.idCategoria');
         $this->db->order_by('nomeEstoque','ASC');
         $query=$this->db->get();
     return $query->result();
     }    
-    function inserir(){
-        return $this->db->insert('estoque');
+    function inserir($e){
+        return $this->db->insert('estoque',$e);
     }
     function deletar($idestoque){
         $this->db->where('idestoque',$idestoque);
