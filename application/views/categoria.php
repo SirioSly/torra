@@ -15,7 +15,6 @@
         <table id="categoria" class="table table-striped">
             <thead>
                 <tr>
-                    <th class="table-dark">ID Categoria</th>
                     <th class="table-dark">Nome Categoria</th>
                     <th class="table-dark">Função</th>
                     
@@ -27,7 +26,7 @@
                 <?php else: ?>
                     <?php foreach ($categoria as $row): ?>
                         <tr>
-                            <td><?php echo $row->idCategoria; ?></td>
+                            
                             <td><?php echo $row->nomeCategoria; ?></td>
                             <td>
                                 <a class="btn btn-success" href="<?php
