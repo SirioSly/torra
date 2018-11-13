@@ -68,7 +68,7 @@
     </div>
 
     <input class="btn btn-success" type="submit" value="Salvar"/>
-    <a class="btn btn-light" href="<?php echo base_url() . 'estoque'; ?>">Voltar</a>
+    <a class="btn btn-light" href="<?php echo base_url() . 'estoqueNovo'; ?>">Voltar</a>
     <?php form_close(); ?>
     <p></p>
 

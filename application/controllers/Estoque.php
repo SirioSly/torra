@@ -74,10 +74,10 @@ public function ativar($idestoque) {
         $result = $this->estoque->deletar($idestoque);
         if ($result == TRUE){
             $this->session->set_flashdata('excluirS', 'msg');
-             redirect('estoque');
+             redirect('estoqueNovo');
         } else{
             $this->session->set_flashdata('excluirF', 'msg');
-            redirect('estoque');
+            redirect('estoqueNovo');
         }
     }
 
@@ -96,13 +96,14 @@ public function ativar($idestoque) {
    public function atualizar(){
         $dados['idestoque'] = $this->input->post('idestoque');            
         $dados['nomeEstoque'] = mb_convert_case ($this->input->post('nomeEstoque'), MB_CASE_UPPER);
-        $dados['nomeCategoria'] = mb_convert_case ($this->input->post('nomeCategoria'), MB_CASE_UPPER);
+        $dados['idCategoria'] = mb_convert_case ($this->input->post('idCategoria'), MB_CASE_UPPER);
         $dados['qntEstoque'] = mb_convert_case ($this->input->post('qntEstoque'), MB_CASE_UPPER);
         $dados['valorVenda'] = mb_convert_case ($this->input->post('valorVenda'), MB_CASE_UPPER);
         $dados['custo'] = mb_convert_case ($this->input->post('custo'), MB_CASE_UPPER);
         $dados['idforce'] = mb_convert_case ($this->input->post('idforce'), MB_CASE_UPPER);
         $dados['lote'] = mb_convert_case ($this->input->post('lote'), MB_CASE_UPPER);
-        $dados['status'] = mb_convert_case ($this->input->post('status'), MB_CASE_UPPER);          
+        $dados['validade'] = mb_convert_case ($this->input->post('validade'), MB_CASE_UPPER);
+        $dados['status'] = true;          
        
             redirect('estoqueNovo');
         }

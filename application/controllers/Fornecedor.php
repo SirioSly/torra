@@ -21,12 +21,12 @@ class Fornecedor extends CI_Controller {
     }
 
     public function inserir() {
-        $data['nomeForce'] = mb_convert_case ($this->input->post('nomeForce'), MB_CASE_UPPER);
-        $data['contatoForce'] = mb_convert_case ($this->input->post('contatoForce'), MB_CASE_UPPER);
-        $data['numero'] = mb_convert_case ($this->input->post('numero'), MB_CASE_UPPER);
-        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
+        $dados['nomeForce'] = mb_convert_case ($this->input->post('nomeForce'), MB_CASE_UPPER);
+        $dados['contatoForce'] = mb_convert_case ($this->input->post('contatoForce'), MB_CASE_UPPER);
+        $dados['numero'] = mb_convert_case ($this->input->post('numero'), MB_CASE_UPPER);
+        $dados['email'] = $this->input->post('email');
         
-         $result = $this->fornecedor->inserir($data);
+         $result = $this->fornecedor->inserir($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucesso', 'msg');
              redirect('fornecedor');
@@ -61,10 +61,10 @@ class Fornecedor extends CI_Controller {
 
    public function atualizar(){
         $data['idforce'] = $this->input->post('idforce');
-        $data['nomeForce'] = mb_convert_case ($this->input->post('nomeForce'), MB_CASE_UPPER);
-        $data['contatoForce'] = mb_convert_case ($this->input->post('contatoForce'), MB_CASE_UPPER);
-        $data['numero'] = mb_convert_case ($this->input->post('numero'), MB_CASE_UPPER);
-        $data['email'] = mb_convert_case ($this->input->post('email'), MB_CASE_UPPER);
+        $dados['nomeForce'] = mb_convert_case ($this->input->post('nomeForce'), MB_CASE_UPPER);
+        $dados['contatoForce'] = mb_convert_case ($this->input->post('contatoForce'), MB_CASE_UPPER);
+        $dados['numero'] = mb_convert_case ($this->input->post('numero'), MB_CASE_UPPER);
+        $dados['email'] = $this->input->post('email');
         
         $result = $this->fornecedor->atualizar($data);
         if ($result == TRUE){

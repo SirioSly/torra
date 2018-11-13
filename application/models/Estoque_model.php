@@ -31,8 +31,8 @@ class Estoque_model extends CI_Model{
         return $this->db->update('estoque');
     }
     
-    function desativar($idcliente) {
-        $this->db->where('idestoque', $idcliente);
+    function desativar($idestoque) {
+        $this->db->where('idestoque', $idestoque);
         $this->db->set('status', 0);
         return $this->db->update('estoque');
     }

@@ -34,20 +34,7 @@ class EstoqueNovo extends CI_Controller {
             redirect('estoqueNovo');
         }
     }
-    public function ativar($idestoque) {
-        $result = $this->estoqueNovo->ativar($idestoque);
-        if ($result == true) {
-            redirect('estoqueNovo');
-        } else {
-            redirect('estoqueNovo');
-        }
-    }
-    public function desativar($idestoque) {
-        $result = $this->estoqueNovo->desativar($idestoque);
-        if ($result == true) {
-            redirect('estoqueNovo');
-        } else {
-            redirect('estoqueNovo');
-        }
-    }
+    
+    
+   
 }

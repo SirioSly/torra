@@ -15,7 +15,7 @@
             
             
             <label for="nomeForce">Nome Usuário<h11>*</h11></label>
-            <input name="nome" type="text" class="col-sm-4 form-control"  id="nomeForce" required value="<?php echo $fornecedorEditar[0]->nomeForce; ?>"> 
+            <input name="nomeForce" type="text" class="col-sm-4 form-control"  id="nomeForce" required value="<?php echo $fornecedorEditar[0]->nomeForce; ?>"> 
         </div>
 
         
