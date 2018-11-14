@@ -53,6 +53,18 @@ class Itensvenda extends CI_Controller {
         
     }
     
+    function itenvendaNovo(){
+        $this->load->view('template/header');
+        $dados['acronico'] = "MPF";
+        $dados['completo'] = "Meu Projeto Framework";
+        $dados['itensEditar'] = $this->itensvenda->editar();
+        $dados['pedido'] = $this->pedido->listar();
+        $dados['estoque'] = $this->estoque->listar();
+        $this->load->view('itensvendaNovo', $dados);
+        $this->load->view('template/footer');
+        
+    }
+    
     function editar($id){
         $this->load->view('template/header');
         $data['acronico'] = "MPF";
