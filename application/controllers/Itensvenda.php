@@ -29,12 +29,12 @@ class Itensvenda extends CI_Controller {
         $dados['idpedido'] = $this->input->post('idpedido');
         $dados['idestoque'] = $this->input->post('idestoque');
         $dados['qntProduto'] = $this->input->post('qntProduto');
-        $dados['status'] = $this->input->post('status');
+        $dados['status'] = 'andamento';
         
         $result = $this->itensvenda->inserir($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucesso', 'msg');
-             redirect('itensvenda');
+             redirect('itensvenda/?ped='.$this->input->post('idpedido'));
         } else{
             $this->session->set_flashdata('falha', 'msg');
             redirect('itensvenda');
@@ -57,24 +57,25 @@ class Itensvenda extends CI_Controller {
         $this->load->view('template/header');
         $data['acronico'] = "MPF";
         $data['completo'] = "Meu Projeto Framework";
-        $data['cidadeEditar'] = $this->cidade->editar($id);
-        $data['estado'] = $this->estado->listar();
-        $this->load->view('cidadeEditar', $data);
+        $data['itensEditar'] = $this->itensvenda->editar($id);
+        $dados['pedido'] = $this->pedido->listar();
+        $dados['estoque'] = $this->estoque->listar();
+        $this->load->view('itensEditar', $data);
         $this->load->view('template/footer');
         
     }
     public function atualizar(){
-        $data['idcidade'] = $this->input->post('idcidade');
-        $data['nomeCidade'] = mb_convert_case ($this->input->post('nomeCidade'), MB_CASE_UPPER);
-        $data['idestado'] = $this->input->post('idestado');
+        $data['iditensvenda'] = $this->input->post('iditensvenda');
+        $data['qntProduto'] = $this->input->post('qntProduto');
+        $data['idestoque'] = $this->input->post('idestoque');
         
          $result = $this->cidade->atualizar($data);
         if ($result == TRUE){
             $this->session->set_flashdata('sucessoA', 'msg');
-             redirect('cidade');
+             redirect('');
         } else{
             $this->session->set_flashdata('falhaA', 'msg');
-            redirect('cidade');
+            redirect('');
         }
     }
   }

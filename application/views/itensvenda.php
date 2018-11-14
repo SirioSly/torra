@@ -1,78 +1,46 @@
- <!DOCTYPE html>
-
-    <div class="container">
-
-<!--        <div class="row"></div>-->
-
-        <?php
-        // put your code here
-//        echo $acronico;
-        echo "<br>";
-    //        echo $completo;
-        echo "<p>";
-        ?>
-        <?php echo form_open('cidade/inserir'); ?>
-        <div class="form-group">
-            <label for="nomecidade">Nome da Cidade<h11>*</h11></label>
-            <input name="nomecidade" type="text" class="col-sm-3 form-control"  id="nomecidade" required/>    
-            <br>
-            <div class="form-group">
-        <label for="idestado">Estado<h11>*</h11></label>
-        <select class="col-sm-3 form-control" aria-label="ngSelected demo" required="requered"
-                id="idestado" name="idestado" type="name" required/>
-        <option>Selecionar Estado... </option>
-        <?php foreach ($estado as $estado): ?>
-            <option value="<?php echo $estado->idestado; ?>"><?php echo $estado->nomeEstado; ?></option>
-        <?php endforeach; ?>        
-    </select>
-    </div>
-            
-     
-        <input class="btn btn-primary" type="submit" value="Salvar"/>
-        <input class="btn btn-danger" type="reset" value="Limpar"/>
-        <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
-        <br>
-        <br>
-        <?php form_close(); ?>
-  
-
-        
-        
-
-        <table id="contatos" class="table table-striped">
+<div class="container">
+    <div id="div-lista">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Disponivel</th>
+                    <th>Valor de Venda</th>
+                    <th>Quantidade</th>
+                    <th>Adicionar</th>
 
 
-        <thead>
-            <tr>
-                <th class="table-dark">Nome da Cidade</th>
-                <th class="table-dark">UF do Estado</th>
-                <th class="table-dark">Função</th>
-                
-            </tr>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if ($estoque == FALSE): ?>
+                    <tr><td>Nenhum produto encontrado!</td></tr>
+                <?php else: ?>
 
-        </thead>
-        <tbody>
-            <?php if ($cidade == FALSE): ?>
-                <tr><td>Nenhum cidade encontrado!</td></tr>
-            <?php else: ?>
-                <?php foreach ($cidade as $row): ?>
+                    <?php $ped = $_GET['ped']; ?>
+
+                    <?php foreach ($estoque as $row): ?>
+                        <?php echo form_open('itensvenda/inserir'); ?>
+                    <input type="hidden" name="idpedido" id="idpedido" value="<?php echo $ped; ?>">
+                    <input type="hidden" name="idestoque" id="idestoque" value="<?php echo $row->idestoque; ?>">
                     <tr>
-                        <td><?php echo $row->nomeCidade; ?></td>
-                        <td><?php echo $row->nomeEstado; ?></td>
-                        
-                        <td>
-                            <a class="btn btn-success" href="<?php
-                            echo base_url() .
-                            'cidade/editar/' . $row->idcidade;
-                            ?>">Editar</a>
-                            |
-                            <a class="btn btn-danger" href="<?php
-                               echo base_url() . ''
-                               . 'cidade/excluir/' . $row->idcidade;
-                               ?>">Excluir</a>
-                        </td>
+                        <td><?php echo $row->nomeEstoque; ?></td>
+                        <td><?php echo $row->nomeCategoria; ?></td>
+                        <td><?php echo $row->qntEstoque; ?></td>
+                        <td><?php echo $row->valorVenda; ?></td>
+                        <td><input name="qntProduto" type="text" class="col-sm-3 form-control"  id="qntProduto" > </td>
+                        <td><input class="btn btn-primary" type="submit" value="ADD"/></td>
                     </tr>
-        <?php endforeach; ?>
-    <?php endif; ?>
-        </tbody>
-    </table>
+                    <?php form_close(); ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            </tbody>
+        </table>
+        <a class="btn btn-success" href="<?php
+           echo base_url() .
+           'finish/?ped=' . $ped;
+           ?>">Finalizar Compra</a>                     
+    </div>
+</div>
+

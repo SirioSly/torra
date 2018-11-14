@@ -37,7 +37,7 @@ class Pedido extends CI_Controller {
         $result = $this->pedido->inserir($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucesso', 'msg');
-             redirect('itensvenda');
+             redirect('pedido');
         } else{
             $this->session->set_flashdata('falha', 'msg');
             redirect('pedido');

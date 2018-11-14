@@ -17,8 +17,8 @@ class Itensvenda_model extends CI_Model{
     return $query->result();
     }
     
-    function inserir($c){
-        return $this->db->insert('itensveda',$c);
+    function inserir($id){
+        return $this->db->insert('itensvenda',$id);
     }
     function deletar($id){
         $this->db->where('itensvenda',$id);
