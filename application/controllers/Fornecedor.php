@@ -60,13 +60,13 @@ class Fornecedor extends CI_Controller {
     }
 
    public function atualizar(){
-        $data['idforce'] = $this->input->post('idforce');
+        $dados['idforce'] = $this->input->post('idforce');
         $dados['nomeForce'] = mb_convert_case ($this->input->post('nomeForce'), MB_CASE_UPPER);
         $dados['contatoForce'] = mb_convert_case ($this->input->post('contatoForce'), MB_CASE_UPPER);
         $dados['numero'] = mb_convert_case ($this->input->post('numero'), MB_CASE_UPPER);
         $dados['email'] = $this->input->post('email');
         
-        $result = $this->fornecedor->atualizar($data);
+        $result = $this->fornecedor->atualizar($dados);
         if ($result == TRUE){
             $this->session->set_flashdata('sucessoA', 'msg');
              redirect('fornecedor');
