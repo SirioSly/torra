@@ -25,10 +25,10 @@ and open the template in the editor.
         <!--Bootstrap-->
         <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 
-        <link rel="stylesheet" type="text/css" href="css/util.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/util.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main.css') ?>">
         <!--<link rel="stylesheet" type="text/css" href="css/usuariomain.css">-->
-        <link rel="stylesheet" type="text/css" href="css/usuarioutil.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/usuarioutil.css') ?>">
 <!--        <script src="js/userjs.js"></script>-->
 
     </head>

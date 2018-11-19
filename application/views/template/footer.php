@@ -1,6 +1,8 @@
 <!--Mask--> 
-<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-<script type="text/javascript" src="assets/js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url ('assets/js/jquery.mask.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url ('assets/js/jquery.maskedinput-1.3.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url ('assets/js/jquery.maskMoney.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url ('assets/js/jquery.mask.min.js') ?>"></script>
 <script href="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script> 
 
 <!--Datatable-->

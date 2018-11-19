@@ -52,7 +52,7 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label for="endereco">Endereço:<h11>*</h11></label>
+                    <label for="endereco">Endereço<h11>*</h11></label>
                     <input type="text" class="form-control" id="endereco" name="endereco" required/>
                 </div>
             </div>
