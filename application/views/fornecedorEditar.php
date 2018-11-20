@@ -14,7 +14,7 @@
         <input type="hidden" name="idforce" id="idforce" value="<?php echo $fornecedorEditar[0]->idforce; ?>">
 
 
-        <label for="nomeForce">Nome Fornecedor<h11>*</h11></label>
+        <label for="nomeForce">Fornecedores<h11>*</h11></label>
         <input name="nomeForce" type="text" class="col-sm-4 form-control"  id="nomeForce" required value="<?php echo $fornecedorEditar[0]->nomeForce; ?>"> 
     </div>
 

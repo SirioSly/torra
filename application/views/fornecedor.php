@@ -33,8 +33,9 @@
         <input class="btn btn-primary" type="submit" value="Salvar"/>
 <!--        <input class="btn btn-dark" type="reset" value="Limpar"/>-->
         <!--        <a class="btn btn-primary" id="btn-lista" href="#">Listar Usuário</a>-->
-        <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
         <a class="btn btn-light" id="btn-lista" href="#">Listar Fornecedores</a> 
+        <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+
     </div>
     <p></p>
     <?php form_close(); ?>
@@ -49,7 +50,7 @@
 
             <thead>
                 <tr>
-                    <th class="table-dark">Nome do Fornecedor</th>
+                    <th class="table-dark">Fornecedores</th>
                     <th class="table-dark">Endereço</th>
                     <th class="table-dark">Fone</th>
                     <th class="table-dark">Email</th>
