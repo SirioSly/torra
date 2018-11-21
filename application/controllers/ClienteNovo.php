@@ -9,6 +9,7 @@ class ClienteNovo extends CI_Controller {
         $this->load->model('ClienteNovo_model', 'cliente');
         $this->load->model('Estado_model', 'estado');
         $this->load->model('Cidade_model', 'cidade');
+        
     }
 
     public function index() {

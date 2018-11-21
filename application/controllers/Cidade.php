@@ -5,10 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cidade extends CI_Controller {
 
     function __construct() {
-        parent::__construct();
-        
+        parent::__construct(); 
         $this->load->model('Cidade_model','cidade'); 
         $this->load->model('Estado_model','estado'); 
+         if (!$this->session->userdata ('estou_logado')) {
+            redirect ('Login');
+         } elseif ($this->session->userdata('logado')->perfilAcesso=="USER") {
+            redirect('home');
+        }
       
         //contatos é um alias para o Contatos_model 
     }

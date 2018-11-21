@@ -9,6 +9,9 @@ class EstoqueNovo extends CI_Controller {
         $this->load->model('EstoqueNovo_model', 'estoqueNovo');
         $this->load->model('Fornecedor_model', 'fornecedor');
         $this->load->model('Categoria_model', 'categoria');
+         if (!$this->session->userdata ('estou_logado')) {
+            redirect ('Login');
+        } 
         
     }
     

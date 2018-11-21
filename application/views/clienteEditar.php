@@ -69,34 +69,43 @@ echo "<p>";
 
 
     <div class="form-row">
-
-
+        <div class="col">
+            <label for="idestado">Estado<h11>*</h11></label>
+            <select class="form-control" aria-label="ngSelected demo" required="requered"
+                    id="idestado" name="idestado" type="name" required/>
+            <option>Selecionar Estado... </option>
+            <?php foreach ($estado as $estado): ?>
+                <option value="<?php echo $estado->idestado; ?>"><?php echo $estado->nomeEstado; ?></option>
+            <?php endforeach; ?>        
+            </select>
+        </div>
         <div class="col">
             <label for="idcidade">Cidade<h11>*</h11></label>
             <select class="form-control" aria-label="ngSelected demo" required="requered"
-                    id="idcidade" name="idcidade" required/>
-                    <?php foreach ($cidade as $cidade): ?>
-                <option name="idcidade" value="<?php echo $cidade->idcidade; ?>"
-                <?php if ($cidade->idcidade === $clienteEditar[0]->idcidade) echo "selected" ?>
-                        ><?php echo $cidade->nomeCidade; ?></option>
-                    <?php endforeach; ?>        
+                    id="idcidade" name="idcidade" type="name" required/>
+            <option>Selecionar Cidade... </option>
+            <?php foreach ($cidade as $cidade): ?>
+                <option value="<?php echo $cidade->idcidade; ?>"><?php echo $cidade->nomeCidade; ?></option>
+            <?php endforeach; ?>        
             </select>
         </div>
     </div>
+
+
     <br>
     <input class="btn btn-success" type="submit" value="Salvar"/>
     <a class="btn btn-light" href="<?php echo base_url() . 'cliente'; ?>">Voltar</a>
     <?php echo form_close(); ?>
-</div>
-
-<script type="text/javascript">
-    jQuery(function ($) {
-        $("#cpf").mask("999.999.999-99");
-        $("#cnpj").mask("99.999.999/9999-99");
-        //            $("#cep").mask("99999-999");
-        //            $("#telFixo").mask("(99) 9999-9999");
-        $("#fone").mask("(99) 99999-9999");
-    });
 
 
-</script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $("#cpf").mask("999.999.999-99");
+            $("#cnpj").mask("99.999.999/9999-99");
+            //            $("#cep").mask("99999-999");
+            //            $("#telFixo").mask("(99) 9999-9999");
+            $("#fone").mask("(99) 99999-9999");
+        });
+
+
+    </script>

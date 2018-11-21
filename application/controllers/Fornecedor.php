@@ -7,6 +7,11 @@ class Fornecedor extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('Fornecedor_model', 'fornecedor');
+         if (!$this->session->userdata ('estou_logado')) {
+            redirect ('Login');
+        } elseif ($this->session->userdata('logado')->perfilAcesso=="USER") {
+            redirect('home');
+        }
         
         //contatos é um alias para o Contatos_model 
     }

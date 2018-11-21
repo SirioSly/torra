@@ -33,7 +33,7 @@ and open the template in the editor.
 
     </head>
     <body>
-        <?php // if ($this->session->userdata('estou_logado')) { ?>
+        <?php if ($this->session->userdata('estou_logado')) { ?>
         <div class="container">             
             <nav class="navbar navbar-expand-lg  navbar-light bg-light">
                 <a class="navbar-brand" href="<?php echo base_url() . 'home' ?>"> Lojão Torra-Torra</a>
@@ -83,6 +83,7 @@ and open the template in the editor.
 
                 <?php } ?>
             </nav>
+                <?php } ?>
 
 
 

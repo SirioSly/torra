@@ -9,12 +9,7 @@ class Estoque extends CI_Controller {
         $this->load->model('Estoque_model', 'estoque');
         $this->load->model('Fornecedor_model', 'fornecedor');
         $this->load->model('Categoria_model', 'categoria');
-//        if(!$this->session->userdata('estou_logado')){
-//            redirect('login');
-//        } else if($this->session->userdata('logado')->perfilAcesso == 'USER'){
-//            redirect('home');
-//        }
-//        contatos é um alias para o Contatos_model 
+                         
     }
     public function index() {
         $this->load->view('template/header');

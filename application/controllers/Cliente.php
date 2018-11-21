@@ -9,7 +9,9 @@ class Cliente extends CI_Controller {
         $this->load->model('Cliente_model', 'cliente');
         $this->load->model('Estado_model', 'estado');
         $this->load->model('Cidade_model', 'cidade');
-        
+         if (!$this->session->userdata ('estou_logado')) {
+            redirect ('Login');
+        }   
     }
     
 
