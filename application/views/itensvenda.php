@@ -1,65 +1,44 @@
 <div class="container">
-    <br>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'itensvenda/itensvendaNovo'; ?>">Nova venda</a>
-    <br>
-    <br>
+    <?php
+    // put your code here
+//        echo $acronico;
+    echo "<br>";
+//        echo $completo;
+    echo "<p>";
+    ?>
 
-    <!--<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a> -->
-    <br>
-    <p></p>
+    <?php echo form_open('itensvenda/inserir'); ?>
+
+
+    <div class="form-group">
+        <input type="hidden" name="idpedido" id="idpedido" value="<?php echo $pedidoSelecionado[0]->idpedido; ?>">
+        <label for="nome">Nome Cliente<h11>*</h11></label>
+        <input name="nome" type="text" class="form-control"  id="nome" required value="<?php echo $pedidoSelecionado[0]->nome; ?>" disabled> 
+    </div>
+
+    <div class="form-group">
+        <label for="idestoque">Itens<h11>*</h11></label>
+        <select class="col-sm-3 form-control" aria-label="ngSelected demo" required="requered"
+                id="idestoque" name="idestoque" type="name" required/>
+        <option>Selecionar itens</option>
+        <?php foreach ($estoque as $estoque): ?>
+            <option value="<?php echo $estoque->idestoque; ?>"><?php echo $estoque->nomeEstoque; ?></option>
+        <?php endforeach; ?>        
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="qntProduto">Quantidade<h11>*</h11></label>
+        <input type="number" class="form-control" id="qntProduto" name="qntProduto" required/> 
+    </div>
+
+
+
+
+    <input class="btn btn-success" type="submit" value="Salvar"/>
+    <a class="btn btn-light" href="<?php echo base_url() . 'pedido'; ?>">Voltar</a>
     <?php form_close(); ?>
     <p></p>
 
-
-
-    <div id="div-lista">
-        <table id="example" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Numero da venda</th>
-                    <th>Cliente</th>
-                    <th>Total da venda</th>
-                    </tr>
-            </thead>
-            <tbody>
-                <?php if ($itensvenda == FALSE): ?>
-                    <tr><td>Nenhum venda encontrada!</td></tr>
-                <?php else: ?>
-                    <?php foreach ($itensvenda as $row): ?>
-
-                        <tr>
-                            <td><?php echo $row->nome; ?></td>
-                            <td><?php echo $row->email; ?></td>
-                            <td><?php echo $row->fone; ?></td>
-                            <td><?php echo $row->endereco; ?></td>
-                            <td>
-                                
-                                <a class="btn btn-danger" href="<?php
-                                echo base_url() . ''
-                                . 'cliente/excluir/' . $row->idcliente;
-                                ?>">Excluir</a>
-                                                                
-                            </td>
-                        </tr>
-
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </tbody>
-        </table>
-    </div>
-    <p></p>
-    <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
 </div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#example').DataTable({
-            language: {
-                "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-            },
-        });
-    });
-//        DataTable Anterior
-//       $(document).ready(function() {
-//    $('#example').DataTable({
-//} );
-</script>
+

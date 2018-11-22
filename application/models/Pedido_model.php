@@ -10,18 +10,29 @@ class Pedido_model extends CI_Model{
     function listar(){
         $this->db->select('*');
         $this->db->from('pedido');
+        $this->db->join('meioPag','meioPag.idmeiopag = pedido.idmeiopag');
         $this->db->join('cliente','cliente.idcliente = pedido.idcliente');
         $this->db->join('usuario','usuario.idusuario = pedido.idusuario');
-        $this->db->join('meioPag','meioPag.idmeioPag = pedido.idmeioPag');
         $query=$this->db->get();
     return $query->result();
     }
     
-    function inserir($c){
-        return $this->db->insert('pedido',$c);
+    function selecionarPedido($id){
+        $this->db->select('*');
+        $this->db->from('pedido');
+        $this->db->join('meioPag','meioPag.idmeioPag = pedido.idmeioPag');
+        $this->db->join('cliente','cliente.idcliente = pedido.idcliente');
+        $this->db->join('usuario','usuario.idusuario = pedido.idusuario');
+        $this->db->where('idpedido',$id);
+        $query=$this->db->get();
+    return $query->result();
+    }
+    
+    function inserir($id){
+        return $this->db->insert('pedido',$id);
     }
     function deletar($id){
-        $this->db->where('idpedido',$id);
+        $this->db->where('pedido',$id);
         return $this->db->delete('pedido');
     }
     function editar($id){
