@@ -29,12 +29,13 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main.css') ?>">
         <!--<link rel="stylesheet" type="text/css" href="css/usuariomain.css">-->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/usuarioutil.css') ?>">
+        <link rel="shortcut icon" href="images/icons/favicon.ico" />
 <!--        <script src="js/userjs.js"></script>-->
 
     </head>
     <body>
         <?php if ($this->session->userdata('estou_logado')) { ?>
-        <div class="container">             
+        <div class="container">                         
             <nav class="navbar navbar-expand-lg  navbar-light bg-light">
                 <a class="navbar-brand" href="<?php echo base_url() . 'home' ?>"> Lojão Torra-Torra</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +48,7 @@ and open the template in the editor.
                             <a class="nav-link" href="<?php echo base_url() . 'home'; ?>">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <font style="color:#000">
                                 Cadastro
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
