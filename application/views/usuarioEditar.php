@@ -8,9 +8,10 @@
         ?>
        
         <?php echo form_open('usuario/atualizar'); ?>
+          <div class="col">
             <div class="form-group">
             <input type="hidden" name="idusuario" id="idusuario" value="<?php echo $usuarioEditar[0]->idusuario; ?>">
-            <label for="nomeUsuario">Nome Usuário<h11>*</h11></label>
+            <label for="nomeUsuario">Nome do Usuário<h11>*</h11></label>
             <input name="nomeUsuario" type="text" id="nomeUsuario" class="col-sm-4 col-form-label form-control" value="<?php echo $usuarioEditar[0]->nomeUsuario; ?>" required/>
             </div>
             <p></p>
@@ -31,9 +32,10 @@
             <option value="USER">Usuário</option>
          </select>
         </div>
-            
+            <br>
             <input class="btn btn-success" type="submit" value="Salvar"/>
                     <a class="btn btn-light" href="<?php echo base_url() .  'usuario'; ?>">Voltar</a>
+          </div>
         <?php form_close(); ?>
 
        

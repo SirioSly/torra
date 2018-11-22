@@ -12,8 +12,9 @@
         echo "<p>";
         ?>
         <?php echo form_open('usuario/inserir'); ?>
+<div class="col">
 <div class="form-group">
-            <label for="nomeUsuario">Nome Usuário<h11>*</h11></label>
+            <label for="nomeUsuario">Nome do Usuário<h11>*</h11></label>
             <input class="col-sm-4 form-control "  name="nomeUsuario" type="text" id="nomeUsuario"> 
         </div>
 
@@ -26,26 +27,27 @@
             <label for="senha">Senha<h11>*</h11></label>
             <input class=" col-sm-4 form-control" class="text" id="senha" name="senha" required placeholder="Mínimo 8 caracteres" minlength="8" type="password" required/>
         </div>
-
-         <div class="">
+            <div class="form-group">
             <label for="perfilAcesso">Perfil Acesso<h11>*</h11></label>
             <select class="col-sm-4 form-control" id="perfilAcesso" name="perfilAcesso" type="text"required/>
             <option value="">Selecionar um Perfil...</option>
             <option value="ADM">Administrador</option>
             <option value="USER">Usuário</option>
          </select>
-        </div>
+            </div>
 <br>
-      <div class="form-group">
-        <input class="btn btn-primary" type="submit" value="Salvar"/>
+        <input class="btn btn-success" type="submit" value="Salvar"/>
 <!--        <input class="btn btn-dark" type="reset" value="Limpar"/>-->
         <a class="btn btn-light" id="btn-lista" href="#">Listar Usuários</a>
     <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
-      </div>
+
+ </div>
+</div>
         <p></p>
         <?php form_close(); ?>
         <p></p>
-
+        <br>
+        <br>
 
 
         <div class="hide" id="div-lista">
@@ -55,10 +57,10 @@
 
         <thead>
             <tr>
-                <th class="table-dark">Usuário</th>
-                <th class="table-dark">User</th>
-                <th class="table-dark">Perfil Acesso</th>
-                <th class="table-dark">Funções</th>
+                <th class="table-light">Usuário</th>
+                <th class="table-light">User</th>
+                <th class="table-light">Perfil Acesso</th>
+                <th class="table-light">Funções</th>
                 
             </tr>
 
@@ -115,8 +117,7 @@
     
     <script type="text/javascript">
         $("#btn-lista").click(function (){
-            $("#div-lista").toggleClass("hide");
-            
+            $("#div-lista").toggleClass("hide");       
         });
         
 //        $(document).ready(function () {

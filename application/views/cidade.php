@@ -28,7 +28,7 @@
     </div>
             
      
-        <input class="btn btn-primary" type="submit" value="Salvar"/>
+        <input class="btn btn-success" type="submit" value="Salvar"/>
         <input class="btn btn-danger" type="reset" value="Limpar"/>
         <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
         <br>
@@ -44,9 +44,9 @@
 
         <thead>
             <tr>
-                <th class="table-dark">Nome da Cidade</th>
-                <th class="table-dark">UF do Estado</th>
-                <th class="table-dark">Função</th>
+                <th class="table-light">Nome da Cidade</th>
+                <th class="table-light">UF do Estado</th>
+                <th class="table-light">Função</th>
                 
             </tr>
 

@@ -8,7 +8,7 @@
 //        echo $completo;
     echo "<p>";
     ?>
-    <h2> Home </h2>
+<!--    <h2> Home </h2>
     <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'estoqueNovo'; ?>">estoque</a>
     <br>
@@ -29,7 +29,7 @@
     <br>
     <br>
     <a class="btn btn-primary" href="<?php echo base_url() . 'itensvenda'; ?>">Venda</a>
- 
+ -->
 
 </div>
 

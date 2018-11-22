@@ -61,13 +61,14 @@ and open the template in the editor.
                                 <a class="dropdown-item" href="<?php echo base_url() . 'estado'; ?>">Estado</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?php echo base_url() . 'estoqueNovo'; ?>">Estoque</a>
+                                <a class="dropdown-item" href="<?php echo base_url() . 'meioPag'; ?>">Meio de Pagamento</a>
 
 
                             </div>
                         </li>
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo base_url() . 'venda'; ?>"> Venda <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="<?php echo base_url() . 'itensvenda'; ?>"> Venda <span class="sr-only">(current)</span></a>
                         </li>
 
                         <li class="nav-item active">
@@ -75,12 +76,12 @@ and open the template in the editor.
                         </li>
                     </ul>
                 </div>
-                &nbsp;<a class="btn btn-light mb-2 float-right" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
+                
                 <?php
                 if ($this->session->userdata('estou_logado')) {
                     echo $this->session->userdata('logado')->nomeUsuario;
                     ?>
-
+&nbsp;<a class="btn btn-danger" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
                 <?php } ?>
             </nav>
                 <?php } ?>

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 
 <div class="container">
-    <div class="row">
         <br>
-    </div>
     <?php
     echo "<br>";
     echo "<p>";
     ?>
     <?php echo form_open('fornecedor/inserir'); ?>
+    <div class="col">
     <div class="form-group">
         <label for="nomeForce">Nome<h11>*</h11></label>
         <input name="nomeForce" type="text" class="col-sm-4 form-control" id="nomeForce" required/> 
@@ -29,18 +28,18 @@
         <input class="col-sm-4 form-control" id="email" name="email" type="text" required placeholder="email@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
     </div>
 
-    <div class="form-group">
         <input class="btn btn-primary" type="submit" value="Salvar"/>
 <!--        <input class="btn btn-dark" type="reset" value="Limpar"/>-->
         <!--        <a class="btn btn-primary" id="btn-lista" href="#">Listar Usuário</a>-->
         <a class="btn btn-light" id="btn-lista" href="#">Listar Fornecedores</a> 
         <a class="btn btn-light" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+    </div>
+    </div>
 
     </div>
-    <p></p>
     <?php form_close(); ?>
-    <p></p>
-
+    <br>
+    <br>
 
 
     <div class="hide" id="div-lista">
@@ -50,11 +49,11 @@
 
             <thead>
                 <tr>
-                    <th class="table-dark">Fornecedores</th>
-                    <th class="table-dark">Endereço</th>
-                    <th class="table-dark">Fone</th>
-                    <th class="table-dark">Email</th>
-                    <th class="table-dark">Função</th>
+                    <th class="table-light">Fornecedores</th>
+                    <th class="table-light">Endereço</th>
+                    <th class="table-light">Fone</th>
+                    <th class="table-light">Email</th>
+                    <th class="table-light">Função</th>
 
                 </tr>
 
