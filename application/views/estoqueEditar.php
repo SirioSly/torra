@@ -35,7 +35,7 @@
 
         <div class="form-group col-md-2">
             <label for="validade">Data de Validade<h11>*</h11></label>
-            <input class="col-sm-12 form-control" type="date" id="validade" name="validade"  required value="<?php echo $estoqueEditar[0]->validade; ?>"/>
+            <input class="col-sm-12 form-control" type="date" id="validade" name="validade"  value="<?php echo $estoqueEditar[0]->validade; ?>"/>
         </div>
     </div>
     <div class="form-row">            
@@ -64,7 +64,7 @@
     </div>
     <div class="form-group">
         <label for="lote">Lote<h11>*</h11></label>
-        <input class="col-sm-2 form-control" type="text" id="valorVenda" name="lote"  required value="<?php echo $estoqueEditar[0]->lote; ?>"/>
+        <input class="col-sm-2 form-control" type="text" id="valorVenda" name="lote"  value="<?php echo $estoqueEditar[0]->lote; ?>"/>
     </div>
 
     <input class="btn btn-success" type="submit" value="Salvar"/>

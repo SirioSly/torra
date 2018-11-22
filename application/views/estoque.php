@@ -31,7 +31,7 @@
 
         <div class="form-group col-md-2">
             <label for="validade">Data de Validade<h11>*</h11></label>
-            <input class="col-sm-12 form-control" type="date" id="validade" name="validade"  required/>
+            <input class="col-sm-12 form-control" type="date" id="validade" name="validade"/>
         </div>
     </div>
     <div class="form-row">            
@@ -58,7 +58,7 @@
     </div>
     <div class="form-group">
         <label for="lote">Lote<h11>*</h11></label>
-        <input class="col-sm-2 form-control" type="text" id="valorVenda" name="lote"  required/>
+        <input class="col-sm-2 form-control" type="text" id="valorVenda" name="lote" />
     </div>
 
     <!--oi-->
