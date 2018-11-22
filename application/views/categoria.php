@@ -39,7 +39,7 @@
                                    echo base_url() . ''
                                    . 'categoria/excluir/' . $row->idCategoria;
                                    ?>">Excluir</a>
-                                <!--123-->
+                                <!--1234-->
                             </td>
                         </tr>
                     <?php endforeach; ?>
