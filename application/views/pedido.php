@@ -3,23 +3,20 @@
     <a class="btn btn-primary" href="<?php echo base_url() . 'pedido/pedidoNovo'; ?>">Nova venda</a>
     <br>
     <br>
-
     <!--<a class="btn btn-primary" id="btn-lista" href="#">Listar Cliente</a> -->
     <br>
     <p></p>
     <?php form_close(); ?>
     <p></p>
-
-
-
-    <div id="div-lista">
+<div id="div-lista">
         <table id="example" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
-                    <th>Numero da venda</th>
+                    <th>N° pedido</th>
                     <th>Cliente</th>
                     <th>Fone</th>
                     <th>Endereço</th>
+                    <th>Função</th>
 
                 </tr>
             </thead>
@@ -28,23 +25,28 @@
                     <tr><td>Nenhum venda encontrada!</td></tr>
                 <?php else: ?>
                     <?php foreach ($pedido as $row): ?>
-
+                                
                         <tr>
-                            <td><?php echo $row->nome; ?></td>
-                            <td><?php echo $row->email; ?></td>
+                            <td><?php echo $row->idpedido; ?></td>
+                            <td><?php echo $row->nome;  ?></td>
                             <td><?php echo $row->fone; ?></td>
                             <td><?php echo $row->endereco; ?></td>
                             <td>
-
+                                <a class="btn btn-primary" href="<?php
+                                echo base_url() .
+                                'itensvenda/itensvenda_editar/' . $row->idpedido;
+                                ?>">Add itens</a>
+                                |
+                                <?php $cli = $row->nome?>
+                                <a class="btn btn-success" href="<?php
+                                echo base_url() .
+                                'finalizar?ped='.$row->idpedido.'&cli='.$cli;
+                                ?>">Finalizar</a>
+                                |
                                 <a class="btn btn-danger" href="<?php
                                 echo base_url() . ''
                                 . 'pedido/excluir/' . $row->idpedido;
                                 ?>">Cancelar</a>
-                                |
-                                <a class="btn btn-success" href="<?php
-                                echo base_url() .
-                                'itensvenda/itensvenda_editar/' . $row->idpedido;
-                                ?>">Adicionar itens</a>
                                                               
                             </td>
                         </tr>

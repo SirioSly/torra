@@ -1,7 +1,5 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Itensvenda_model extends CI_Model{
     function __construct(){
         parent::__construct();
@@ -10,7 +8,7 @@ class Itensvenda_model extends CI_Model{
     function listar(){
         $this->db->select('*');
         $this->db->from('itensvenda');
-//        $this->db->join('estoque','estoque.idestoque = itensvenda.idestoque');
+        $this->db->join('estoque','estoque.idestoque = itensvenda.idestoque');
 //        $this->db->join('pedido','pedido.idpedido = itensvenda.idpedido');
 //        $this->db->join('meioPag','meioPag.idmeiopag = pedido.idmeiopag');
 //        $this->db->join('cliente','cliente.idcliente = pedido.idcliente');
@@ -19,25 +17,22 @@ class Itensvenda_model extends CI_Model{
     return $query->result();
     }
     
-    function inserir($id){
-        return $this->db->insert('itensvenda',$id);
+    function inserir($c){
+        return $this->db->insert('itensvenda',$c);
     }
     function deletar($id){
         $this->db->where('itensvenda',$id);
         return $this->db->delete('itensvenda');
     }
     
-    
-    function editar($idpedido){
-        $this->db->where('idpedido',$idpedido);
+    function editar($id){
+        $this->db->where('iditensvenda',$id);
         $result = $this->db->get('itensvenda');
         return $result->result();
     }
     function atualizar($data){
-        $this->db->where('idpedido',$data['idpedido']);
+        $this->db->where('iditensvenda',$data['iditensvenda']);
         $this->db->set($data);
         return $this->db->update('itensvenda');
     }
-
 }
-

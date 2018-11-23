@@ -1,9 +1,6 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Pedido extends CI_Controller {
-
     function __construct() {
         parent::__construct();
         $this->load->model('Pedido_model','pedido'); 
@@ -14,7 +11,6 @@ class Pedido extends CI_Controller {
       
         //contatos é um alias para o Contatos_model 
     }
-
     public function index() {
         $this->load->view('template/header');
         $dados['acronico'] = "MPF";
@@ -32,7 +28,8 @@ class Pedido extends CI_Controller {
         $dados['idcliente'] = $this->input->post('idcliente');
         $dados['idmeioPag'] = $this->input->post('idmeioPag');
         $dados['data'] = $this->input->post('data');
-        $dados['idusuario'] = 4; //pegar da seção
+        $dados['idusuario'] = $this->session->userdata('logado')->idusuario; //pegar da seção
+        $dados['statusPed'] ='andamento';
        
         
         $result = $this->pedido->inserir($dados);
@@ -44,7 +41,6 @@ class Pedido extends CI_Controller {
             redirect('pedido');
         }
     }
-
         public function excluir($id){
          $result = $this->pedido->deletar($id);
         if ($result == TRUE){

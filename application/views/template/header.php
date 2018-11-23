@@ -69,12 +69,10 @@ and open the template in the editor.
                         </li>
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo base_url() . 'itensvenda'; ?>"> Venda <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="<?php echo base_url() . 'pedido'; ?>"> Venda <span class="sr-only">(current)</span></a>
                         </li>
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo base_url() . 'relatorio'; ?>"> Relatorio <span class="sr-only">(current)</span></a>
-                        </li>
+                       
                     </ul>
                 </div>
                 
