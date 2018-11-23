@@ -25,7 +25,7 @@
 
 
         <br>
-        <br>
+
 
         <table id="contatos" class="table table-striped">
 <!--        <caption>Estados</caption>-->
